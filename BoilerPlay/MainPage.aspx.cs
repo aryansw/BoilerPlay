@@ -25,11 +25,11 @@ namespace BoilerPlay
             String dateBox = dateTimePicker.Value.ToString("yyyy-MM-dd");
             String timeBox = timeComboBox.Text;
 
-            if(sportsBox.Equals("All"))
+            /*if(sportsBox.Equals("All"))
             {
                 
-            }
-            for(int i = 0; i<)
+            }*/
+            //for (int i = 0; i <)
 
             //x.Rows[0].ItemArray[0];
         }
