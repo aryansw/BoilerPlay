@@ -141,8 +141,8 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="MainPage.aspx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="MainPage.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\IMG_2429.jpg" />
     <Content Include="Scripts\jquery-3.3.1.js" />
