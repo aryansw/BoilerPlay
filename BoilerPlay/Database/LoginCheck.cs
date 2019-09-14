@@ -11,7 +11,15 @@ namespace BoilerPlay
         public static bool Login(String Email, String Password)
         {
             DataTable output = Database.Query.ExecuteReturnCommand("select Email, Password from Accounts WHERE Email = '" + Email + "';");
-            String x = output.Rows[0].ItemArray[1].ToString();
+            String x;
+            try
+            {
+                x = output.Rows[0].ItemArray[1].ToString();
+            }
+            catch(System.IndexOutOfRangeException e)
+            {
+                x = null;
+            }
             if (x!= null)
             {
                 if (x.Equals(Password))

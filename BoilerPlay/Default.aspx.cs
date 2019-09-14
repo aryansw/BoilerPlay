@@ -13,7 +13,7 @@ namespace BoilerPlay
         protected void Page_Load(object sender, EventArgs e)
         {
             //To Run Login  
-            bool z = BoilerPlay.LoginCheck.Login("wadhwani@purdue.edu","hellowordd");
+            // bool z = BoilerPlay.LoginCheck.Login("wadhwani@purdue.eddu","hellowordd");
 
 
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
