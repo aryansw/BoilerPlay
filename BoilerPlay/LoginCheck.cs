@@ -6,12 +6,21 @@ using System.Web;
 
 namespace BoilerPlay
 {
-    public class LoginCheck
+    public static class LoginCheck
     {
-        public Boolean login(String , String Password);
-        BoilerPlay.Database.Query query = new Database.Query();
-        DataTable output = query.ExecuteReturnCommand("Select * from Accounts");
-        String x = output.Rows[0].ItemArray[1].ToString();
-        Console.WriteLine(x);
+        public static bool Login(String Email, String Password)
+        {
+            DataTable output = Database.Query.ExecuteReturnCommand("select Email, Password from Accounts WHERE Email = '" + Email + "';");
+            String x = output.Rows[0].ItemArray[1].ToString();
+            if (x!= null)
+            {
+                if (x.Equals(Password))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

@@ -11,7 +11,10 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
+          //To Run Login  
+            // bool x = BoilerPlay.LoginCheck.Login("wadhwani@purdue.edu","helloworld");
+            
+            //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts")
         }
     }
 }
