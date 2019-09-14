@@ -14,16 +14,19 @@ namespace BoilerPlay.Database
             try
             {
                 String pass = output.Rows[0].ItemArray[1].ToString();
-                return false;
+                return true;
             }
             catch(Exception e)
             {
-                return true;
+                return false;
             }
         }
-        public static void RegisterAccount(String Name,int Desc,String Password,String Email, String PhoneNo)
+        public static void RegisterAccount(String Name,String Desc,String Password,String Email, String PhoneNo, String Year)
         {
+            if (!IsEmailUsed(Email))
+            {
 
+            }
         }
     }
 }
