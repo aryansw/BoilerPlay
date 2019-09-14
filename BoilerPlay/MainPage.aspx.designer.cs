@@ -11,7 +11,7 @@ namespace BoilerPlay
 {
 
 
-    public partial class HomePage
+    public partial class WebForm1
     {
 
         /// <summary>
