@@ -12,7 +12,8 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            var abc = Cookies.ReadCookie(this.Request, this.Response);
+
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
             //var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
 
