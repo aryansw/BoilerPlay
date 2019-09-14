@@ -34,11 +34,41 @@ namespace BoilerPlay.Database
                 newPost.Desc = output.Rows[x].ItemArray[5].ToString();
                 newPost.Location = output.Rows[x].ItemArray[6].ToString();
                 newPost.NumberNeeded = Convert.ToInt32(output.Rows[x].ItemArray[7].ToString());
+                newPost.Proficiency = output.Rows[x].ItemArray[8].ToString();
                 posts.Add(newPost);
             }
             return posts.ToArray();
         }
+        public static void CreatePostInDataBase(Posts postToAdd)
+        {
+            string dateTimeString = postToAdd.DateTime.ToString("yyyy-MM-dd hh:mm:ss") + ".000";//2018-09-08 17:51:04.000
 
+            int newPostID = GenerateNewPostID();
+            Query.ExecuteNonReturnCommand(String.Format("INSERT INTO {0}({0}.PostID, {0}.Title, {0}.Host_Name, {0}.DateTime, {0}.Gender, {0}.Desc, {0}.Location, {0}.NumberNeeded, {0}.Proficiency) " +
+                "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}');",
+                "HelloWorld.Posts",
+                newPostID, 
+                postToAdd.Title,
+                postToAdd.Posts_Name,
+                dateTimeString, 
+                postToAdd.Gender, 
+                postToAdd.Desc, 
+                postToAdd.Location,
+                postToAdd.NumberNeeded,
+                postToAdd.Proficiency));
+        }
+        public static int GenerateNewPostID()
+        {
+            var postIDs = Query.ExecuteReturnCommand("SELECT HelloWorld.Posts.PostID FROM HelloWorld.Posts");
+            int highestPostNumber = 0;
+            for (int x = 0; x < postIDs.Rows.Count; x++)
+            {
+                int number = Convert.ToInt32(postIDs.Rows[x].ItemArray[0].ToString());
+                if(number > highestPostNumber)
+                    highestPostNumber = number;
+            }
+            return highestPostNumber + 1;
+        }
 
 
         public struct Posts
@@ -51,6 +81,7 @@ namespace BoilerPlay.Database
             public string Desc;
             public string Location;
             public int NumberNeeded;
+            public string Proficiency;
         }
     }
 }
