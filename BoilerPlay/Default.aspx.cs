@@ -17,10 +17,10 @@ namespace BoilerPlay
 
 
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
-            var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
+            //var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
 
 
-            var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
+            //var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
             
         }
     }
