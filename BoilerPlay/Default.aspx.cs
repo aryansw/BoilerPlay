@@ -12,16 +12,25 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //To Run Login  
-            // bool z = BoilerPlay.LoginCheck.Login("wadhwani@purdue.eddu","hellowordd");
-
-
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
             //var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
 
 
             //var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
-            
+
+            /*HelloWorldQueryMethods.Posts post = new HelloWorldQueryMethods.Posts
+            {
+                Location = "corec",
+                Gender = DatabaseOptions.Posts_Gender.Male,
+                NumberNeeded = 1,
+                Title = "Pool",
+                Proficiency = DatabaseOptions.Posts_Proficiency.Skilled,
+                Desc = "Need 1 person to play pool in the corec",
+                DateTime = DateTime.Now,
+                Posts_Name = "Host Name"
+            };
+            HelloWorldQueryMethods.CreatePostInDataBase(post);
+            */
         }
     }
 }

@@ -45,7 +45,7 @@ namespace BoilerPlay.Database
             return dt;
         }
         /// <summary>
-        /// This executes a command that doesn't return any inputs ie. UPDATE, DELETE
+        /// This executes a command that doesn't return any inputs ie. UPDATE, DELETE, INSERT
         /// </summary>
         /// <param name="commandString"></param>
         public static void ExecuteNonReturnCommand(string commandString)
