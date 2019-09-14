@@ -219,6 +219,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Database\Register.cs" />
+    <Compile Include="Database\HelloWorldQueryMethods.cs" />
     <Compile Include="Database\Query.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
