@@ -18,7 +18,7 @@
                             <input type="email" class="form-control bg-light" id="email" name="email" placeholder="Email id" value="">
                         </div>
                         <div class="form-group m-5">
-                            <input type="password" class="form-control bg-light" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control bg-light" id="Password" placeholder="Password">
                         </div>
                         <div class="form-group text-center">
                             <input id="Login" name="submit" type="submit" value="LOGIN" class="btn btn-dark">
