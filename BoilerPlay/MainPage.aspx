@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="BoilerPlay.HomePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="BoilerPlay.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,6 @@
     <title></title>
 </head>
 <body>
-    New page created
     <form id="form1" runat="server">
         <div>
         </div>
