@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,6 +23,8 @@ namespace BoilerPlay
             {
                 if (LoginCheck.Login(inEmail,inPass))
                 {
+                    DataTable output = Database.Query.ExecuteReturnCommand("select ID from Accounts WHERE Email = '" + inEmail + "';");
+                    Cookies.WriteCookie(output.Rows[0].ItemArray[0].ToString(), this.Response);
                     Response.Redirect("MainPage.aspx");
                 }
               /*  else
