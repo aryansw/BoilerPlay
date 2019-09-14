@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center">BoilerPlay</h2>
-                    <form class="form-horizontal" id="registration-form" role="form" runat="server">
+                    <form class="form-horizontal" role="form" runat="server">
                         <div class="form-group m-5">
                             <input type="email" class="form-control bg-light" id="email" name="email" placeholder="Email id" value="">
                         </div>
