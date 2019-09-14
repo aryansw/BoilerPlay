@@ -11,7 +11,7 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
         }
     }
 }
