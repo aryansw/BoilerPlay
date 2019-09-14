@@ -17,7 +17,7 @@
                     </div>
                     <form class="form-horizontal" id="login-form" role="form">
                         <div class="form-group m-5">
-                            <input type="email" class="form-control bg-light" id="email" name="email" placeholder="Email id" value="" required>
+                            <input type="email" class="form-control bg-light" id="email" name="email" placeholder="Email ID" value="" required>
                         </div>
                         <div class="form-group m-5">
                             <input type="password" class="form-control bg-light" id="Password" placeholder="Password" required>
