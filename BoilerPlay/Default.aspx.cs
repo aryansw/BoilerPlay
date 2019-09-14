@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BoilerPlay.Database;
 
 namespace BoilerPlay
 {
@@ -12,6 +13,11 @@ namespace BoilerPlay
         protected void Page_Load(object sender, EventArgs e)
         {
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
+            var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
+
+
+            var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
+            y[0]
         }
     }
 }
