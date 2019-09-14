@@ -19,5 +19,12 @@ namespace BoilerPlay.Database
             public static readonly string Skilled = "Skilled";
             public static readonly string Professional = "Professional";
         }
+        public static class Account_Year
+        {
+            public static readonly int Freshman = 0;
+            public static readonly int Sophomore = 1;
+            public static readonly int Junior = 2;
+            public static readonly int Senior = 3;
+        }
     }
 }
