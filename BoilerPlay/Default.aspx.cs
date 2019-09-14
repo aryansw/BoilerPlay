@@ -17,7 +17,7 @@ namespace BoilerPlay
 
 
             var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
-            y[0]
+            
         }
     }
 }
