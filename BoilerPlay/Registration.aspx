@@ -17,28 +17,34 @@
                     </div>
                     <form class="form-horizontal" id="registration-form" role="form">
                         <div class="form-group m-5">
-                            <input type="text" class="form-control bg-light" id="Name" name="name" placeholder="Email id" value="" required>
+                            <input type="text" class="form-control bg-light" id="Name" name="name" placeholder="Name" value="" required>
                         </div>
                         <div class="form-group m-5">
                             <input type="email" class="form-control bg-light" id="email" name="email" placeholder="Email id" value="">
                         </div>
                         <div class="form-group m-5">
+                            <h4>Year:</h4>
+                            <label class="radio-inline mx-3"><input type="radio" name="optradio" checked>Freshman</label>
+                            <label class="radio-inline mx-3"><input type="radio" name="optradio">Sophomore</label>
+                            <label class="radio-inline mx-3"><input type="radio" name="optradio">Junior</label>
+                            <label class="radio-inline mx-3"><input type="radio" name="optradio">Senior</label>
+                        </div>
+                        <div class="form-group m-5">
+                            <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control bg-light" required placeholder="Phone number" >
+                        </div>
+                        <div class="form-group m-5">
                             <input type="password" class="form-control bg-light" id="Password" placeholder="Password">
                         </div>
-                        <div class="form-group text-center">
-                            <input id="Login" name="submit" type="submit" value="LOGIN" class="btn btn-dark">
+                        <div class="form-group m-5">
+                            <input type="password" class="form-control bg-light" id="Password1" placeholder="Re-enter Password">
                         </div>
-                        <p class="text-center">Don't have an account?</p>
-                        <div class="form-group text-center">
-                            <a href="#" class="btn btn-dark">SIGN UP</a>
+                        <div class="form-group text-right mr-5">
+                            <input class="btn btn-dark" type="submit" value="Submit">
                         </div>
-
                      </form>
                  </div>
             </div>
         </div>
     </div>
-</body>
-
 </body>
 </html>
