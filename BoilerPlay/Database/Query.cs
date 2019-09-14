@@ -13,7 +13,7 @@ namespace BoilerPlay.Database
     public class Query
     {
         private string connectionString = "server=104.154.172.96;user id=root;password=adminHelloWorld_1;persistsecurityinfo=True;database=HelloWorld";
-        private DataTable ExecuteReturnCommand(string commandString)
+        public DataTable ExecuteReturnCommand(string commandString = "select * from Accounts")
         {
             DataTable dt = new DataTable();
             MySqlConnection conn = null;
@@ -23,9 +23,10 @@ namespace BoilerPlay.Database
                 conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter(commandString, conn);
                 da.Fill(dt);
-
-                //dg.DataSource = dt.Tables[0];
-
+                /*MySqlCommand cmd = new MySqlCommand(commandString, conn);
+                string inp = Convert.ToString(cmd.ExecuteScalar());
+                Console.WriteLine(inp);
+                */
             }
             catch (MySqlException ex)
             {
