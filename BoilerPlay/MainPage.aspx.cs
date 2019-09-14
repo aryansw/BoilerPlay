@@ -19,11 +19,11 @@ namespace BoilerPlay
 
             var x = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
 
-            String sportsBox = sportsComboBox.Text;
-            String profeciencyBox = profeciencyComboBox.Text;
-            String genderBox = genderComboxBox.Text;
-            String dateBox = dateTimePicker.Value.ToString("yyyy-MM-dd");
-            String timeBox = timeComboBox.Text;
+            //String sportsBox = sportsComboBox.Text;
+            //String profeciencyBox = profeciencyComboBox.Text;
+            //String genderBox = genderComboxBox.Text;
+            //String dateBox = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            //String timeBox = timeComboBox.Text;
 
             /*if(sportsBox.Equals("All"))
             {
