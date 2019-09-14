@@ -17,7 +17,8 @@ namespace BoilerPlay
 
 
             //var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
-            HelloWorldQueryMethods.Posts post = new HelloWorldQueryMethods.Posts
+
+            /*HelloWorldQueryMethods.Posts post = new HelloWorldQueryMethods.Posts
             {
                 Location = "corec",
                 Gender = DatabaseOptions.Posts_Gender.Male,
@@ -29,7 +30,7 @@ namespace BoilerPlay
                 Posts_Name = "Host Name"
             };
             HelloWorldQueryMethods.CreatePostInDataBase(post);
-            
+            */
         }
     }
 }
