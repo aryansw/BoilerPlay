@@ -13,10 +13,6 @@ namespace BoilerPlay.Database
     public class Query
     {
         private string connectionString = "server=104.154.172.96;user id=root;password=adminHelloWorld_1;persistsecurityinfo=True;database=HelloWorld";
-        public Query()
-        {
-            var stuff = ExecuteReturnCommand("Select * Where ");
-        }
         private DataTable ExecuteReturnCommand(string commandString)
         {
             DataTable dt = new DataTable();
