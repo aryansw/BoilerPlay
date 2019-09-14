@@ -16,7 +16,21 @@ namespace BoilerPlay
         
         protected void Login_Click(object sender, EventArgs e)
         {
-
+            String inEmail = email.Value.ToString();
+            String inPass = Password.Value.ToString();
+            if (inEmail != null && inPass != null)
+            {
+                if (LoginCheck.Login(inEmail,inPass))
+                {
+                    Response.Redirect("MainPage.aspx");
+                }
+              /*  else
+                {
+                        /TO DO, WRONG PASSWORD CODE
+                }
+              */
+            }
+            // TO DO : STORE COOKIE WITH ACCOUNT ID
         }
     }
 }
