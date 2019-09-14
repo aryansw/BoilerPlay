@@ -13,5 +13,10 @@ namespace BoilerPlay
         {
             
         }
+
+        protected void Login_ServerClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
