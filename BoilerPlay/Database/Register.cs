@@ -25,7 +25,7 @@ namespace BoilerPlay.Database
         {
             if (!IsEmailUsed(Email))
             {
-
+                Database.Query.ExecuteNonReturnCommand("insert into Accounts VALUES");
             }
         }
     }
