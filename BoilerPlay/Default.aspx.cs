@@ -12,6 +12,10 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //To Run Login  
+            bool z = BoilerPlay.LoginCheck.Login("wadhwani@purdue.edu","hellowordd");
+
+
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
             var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
 
