@@ -22,7 +22,7 @@ namespace BoilerPlay
             {
                 if (LoginCheck.Login(inEmail,inPass))
                 {
-                    bool x = LoginCheck.Login(inEmail, inPass);
+                    Response.Redirect("MainPage.aspx");
                 }
             }
             // TO DO : STORE COOKIE WITH ACCOUNT ID
