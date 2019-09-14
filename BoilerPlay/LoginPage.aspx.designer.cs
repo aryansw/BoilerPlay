@@ -10,6 +10,6 @@
 namespace BoilerPlay {
     
     
-    public partial class WebForm1 {
+    public partial class LoginPage {
     }
 }

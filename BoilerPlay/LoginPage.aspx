@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="BoilerPlay.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="BoilerPlay.LoginPage" %>
 
 <!DOCTYPE html>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center">BoilerPlay</h2>
-                    <form class="form-horizontal" id="registration-form" role="form" method="post" action="mail.php">
+                    <form class="form-horizontal" id="registration-form" role="form">
                         <div class="form-group m-5">
                             <input type="email" class="form-control bg-light" id="email" name="email" placeholder="Email id" value="">
                         </div>
@@ -25,7 +25,7 @@
                         </div>
                         <p class="text-center">Don't have an account?</p>
                         <div class="form-group text-center">
-                            <input id="SignIn" name ="submit" type="submit" value="SIGN UP" class="btn btn-dark" />
+                            <a href="#" class="btn btn-dark">SIGN UP</a>
                         </div>
 
                      </form>
