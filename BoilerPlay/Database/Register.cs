@@ -25,7 +25,8 @@ namespace BoilerPlay.Database
         {
             if (!IsEmailUsed(Email))
             {
-
+                String ID = Database.Query.ExecuteReturnCommand("select ID from Accounts order by ID asc");
+                Database.Query.ExecuteNonReturnCommand("insert into Accounts VALUES ");
             }
         }
     }
