@@ -12,13 +12,14 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
             //var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
 
 
             //var y = HelloWorldQueryMethods.GetAllPostsByLocation("Corec");
-
-            /*HelloWorldQueryMethods.Posts post = new HelloWorldQueryMethods.Posts
+            /*
+            HelloWorldQueryMethods.Posts post = new HelloWorldQueryMethods.Posts
             {
                 Location = "corec",
                 Gender = DatabaseOptions.Posts_Gender.Male,
