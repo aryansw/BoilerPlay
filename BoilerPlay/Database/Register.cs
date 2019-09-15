@@ -8,6 +8,11 @@ namespace BoilerPlay.Database
 {
     public static class Register
     {
+        public static string FixApostrophe(string inp)
+        {
+            inp = inp.Replace("'", "''");
+            return inp;
+        }
         public static bool IsEmailUsed(String email)
         {
             DataTable output = Database.Query.ExecuteReturnCommand("select Email, Password from Accounts WHERE Email = '" + email + "';");
@@ -49,7 +54,7 @@ namespace BoilerPlay.Database
                     ID,
                     Name,
                     yr,
-                    Desc,
+                    FixApostrophe(Desc),
                     Password,
                     Email,
                     PhoneNo));

@@ -33,7 +33,11 @@ namespace BoilerPlay
                 }
              
             }
-            // TO DO : STORE COOKIE WITH ACCOUNT ID
+        }
+
+        protected void Sign_Up_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
         }
     }
 }
