@@ -441,25 +441,26 @@ namespace BoilerPlay
             var tempValues = BoilerPlay.Database.Query.ExecuteReturnCommand(cmdString);
 
 
-            int count = dates.Length;
+            int count = tempValues.Rows.Count;
             int numberRemoved = 0;
-            for (int i = 0; i < count; i++)
+            for (int i = tempValues.Rows.Count - 1; i >= 0 ; i--)
             {
+                string subString = DateTime.Parse(tempValues.Rows[i].ItemArray[3].ToString()).ToString("yyyy-MM-dd hh:mm");
                 if (!String.IsNullOrWhiteSpace(dateBox))
                 {
-                    string subString = dates[i].Substring(0, 10);
-                    if (subString.Equals(dateBox))
+                    //2019-09-16
+                    if (subString.Substring(0, 10).Equals(dateBox))
                     {
                         if (String.IsNullOrWhiteSpace(timeBox2) != true && String.IsNullOrWhiteSpace(timeBox1) != true)
                         {
-                            string endSub = dates[i].Substring(11, 2);
+                            string endSub = subString.Substring(11, 2);
                             if (Int32.Parse(timeBox2.Substring(0, 2)) >= Int32.Parse(endSub))
                             {
-                                if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 2))))))
+                                if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse(subString.Substring(11, 2)))))
                                 {
-                                    if (Int32.Parse(timeBox2.Substring(3, 2)) >= (Int32.Parse((dates[i].Substring(14, 2)))))
+                                    if (Int32.Parse(timeBox2.Substring(3, 2)) >= (Int32.Parse((subString.Substring(14, 2)))))
                                     {
-                                        if ((Int32.Parse(timeBox1.Substring(3, 2)) <= (Int32.Parse((dates[i].Substring(14, 2))))))
+                                        if (Int32.Parse(timeBox1.Substring(3, 2)) <= (Int32.Parse((subString.Substring(14, 2)))))
                                         {
                                         }
                                         else
@@ -489,7 +490,7 @@ namespace BoilerPlay
                     }
                     else
                     {
-                        tempValues.Rows.RemoveAt(i - numberRemoved);
+                        tempValues.Rows.RemoveAt(i);
                         numberRemoved++;
                     }
                 }
@@ -497,13 +498,13 @@ namespace BoilerPlay
                 {
                     if (String.IsNullOrWhiteSpace(timeBox2) != true && String.IsNullOrWhiteSpace(timeBox1) != true)
                     {
-                        if ((Int32.Parse(timeBox2.Substring(0, 2)) >= (Int32.Parse((dates[i].Substring(11, 13))))))
+                        if ((Int32.Parse(timeBox2.Substring(0, 2)) >= (Int32.Parse((subString.Substring(11, 13))))))
                         {
-                            if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))))
+                            if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((subString.Substring(11, 13))))))
                             {
-                                if (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15)))))
+                                if (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((subString.Substring(13, 15)))))
                                 {
-                                    if ((Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
+                                    if ((Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((subString.Substring(13, 15))))))
                                     {
                                         tempValues.Rows.RemoveAt(i);
                                     }
