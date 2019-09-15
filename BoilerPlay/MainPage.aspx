@@ -128,7 +128,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender0" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_0" class="btn btn-dark" onserverclick="button0_ServerClick_0">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button0" class="btn btn-dark" onserverclick="button0_ServerClick">I'm interested!</button>
                             </div>
@@ -157,7 +159,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender1" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_1" class="btn btn-dark" onserverclick="button1_ServerClick_1">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button1" class="btn btn-dark" onserverclick="button1_ServerClick">I'm interested!</button>
                             </div>
@@ -187,7 +191,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender2" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_2" class="btn btn-dark" onserverclick="button2_ServerClick_2">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button2" class="btn btn-dark" onserverclick="button2_ServerClick">I'm interested!</button>
                             </div>
@@ -216,7 +222,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender3" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_3" class="btn btn-dark" onserverclick="button3_ServerClick_3">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button3"  class="btn btn-dark" onserverclick="button3_ServerClick">I'm interested!</button>
                             </div>
@@ -245,7 +253,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender4" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_4" class="btn btn-dark" onserverclick="button4_ServerClick_4">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button4" class="btn btn-dark" onserverclick="button4_ServerClick">I'm interested!</button>
                             </div>
@@ -274,7 +284,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender5" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_5" class="btn btn-dark" onserverclick="button5_ServerClick_5">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button5" class="btn btn-dark" onserverclick="button5_ServerClick">I'm interested!</button>
                             </div>
@@ -303,7 +315,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender6" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_6" class="btn btn-dark" onserverclick="button6_ServerClick_6">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button6" class="btn btn-dark" onserverclick="button6_ServerClick">I'm interested!</button>
                             </div>
@@ -332,7 +346,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender7" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_7" class="btn btn-dark" onserverclick="button7_ServerClick_7">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button7" class="btn btn-dark" onserverclick="button7_ServerClick">I'm interested!</button>
                             </div>
@@ -361,7 +377,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender8" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_8" class="btn btn-dark" onserverclick="button8_ServerClick_8">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button8" class="btn btn-dark" onserverclick="button8_ServerClick">I'm interested!</button>
                             </div>
@@ -390,7 +408,9 @@
                             <div class="col-md-6 col-6">
                                 <p><span runat="server" id="Gender9" class="card-text">Gender:</span></p>
                             </div>
-                            <div class="col-md-6 col-6"></div>
+                            <div class="col-md-6 col-6">
+                                <a href="DisplayProfile.aspx" target="_blank" id="button_9" class="btn btn-dark" onserverclick="button9_ServerClick_9">View Profile of Host</a>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button9" class="btn btn-dark" onserverclick="button9_ServerClick">I'm interested!</button>
                             </div>
