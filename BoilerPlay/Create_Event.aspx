@@ -79,7 +79,11 @@
                 <div class="col-md-4">
                     <p> <asp:Calendar ID="Calendar" runat="server"></asp:Calendar></p>
                 </div>
-                <p class="m-3 ml-n5 mr-5">Time: <input type="time" min="00:00" max="23:59" id="appt" name="time"></p>
+                <p class="m-3 ml-n5 mr-5">Time: <input type="time" min="00:00" max="23:59" id="appt" runat="server" name="time"></p>
+            </div>
+            <div class="form-group text-center">
+                    <!-- <input id="Login" name="submit" type="submit" value="LOGIN" class="btn btn-dark"> -->
+                    <button class="btn btn-dark" id="CreateEve" runat="server" onServerClick="CreateEve_ServerClick">LOGIN</button>
             </div>
         </div>
         </div>
