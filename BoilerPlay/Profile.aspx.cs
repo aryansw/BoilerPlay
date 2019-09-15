@@ -11,7 +11,7 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string x = Cookies.ReadCookie(this.Request, this.Response);
+            string x = Cookies.ReadCookie(this.Request, this.Response);
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
