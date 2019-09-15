@@ -22,8 +22,8 @@
             <div class="col-md-2 col-10">
                 <div class="form-group">
                     <div class="form-group">
-                    <label for="SportName" class="dropdown-item-text"  runat="server" id="SportName">Sport Name</label>
-                      <select>
+                    <label for="SportName" runat="server" class="dropdown-item-text" >Sport Name</label>
+                      <select runat="server"  id="SportName">
                         <option>Basketball</option>
                       </select>
                  </div>
@@ -32,7 +32,7 @@
             <div class="col-md-2 col-10">
                 <div class="form-group">
                     <label for="Proficiency" class="dropdown-item-text">Proficiency:</label>
-                      <select>
+                      <select runat="server" id="SportName">
                         <option>Beginner</option>
                         <option>Amateur</option>
                         <option>Skilled</option>
@@ -43,7 +43,7 @@
             <div class="col-md-2 col-10">
                 <div class="form-group">
                     <label for="Gender" class="dropdown-item-text">Gender:</label>
-                      <select>
+                      <select runat="server" id="Gender">
                         <option>Male</option>
                         <option>Female</option>
                         <option>Both</option>
@@ -79,7 +79,7 @@
                 <div class="col-md-4">
                     <p> <asp:Calendar ID="Calendar" runat="server"></asp:Calendar></p>
                 </div>
-                <p class="m-3 ml-n5 mr-5">Time: <input type="time" id="appt" name="time" required></p>
+                <p class="m-3 ml-n5 mr-5">Time: <input type="time" min="00:00" max="23:59" id="appt" name="time"></p>
             </div>
         </div>
         </div>

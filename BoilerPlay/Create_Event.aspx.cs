@@ -11,7 +11,18 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String sportsBox = SportName.Value;
+            String profeciencyBox = SportName.Value;
+            String genderBox = Gender.Value;
+            String reqPeopleBox = ReqPeople.Value;
+            String locationBox = Location.Value;
+            String sportDescriptionBox = SportDescription.Value;
+            String dateBox = Calendar.SelectedDate.ToString("yyyy-MM-dd");
 
+
+            //String timeBox1 = timeComboBox1.Text; //accept as hh:mm (smaller)
+            // String timeBox2 = timeComboBox2.Text; //accept as hh:mm (bigger value)
+           // Database.HelloWorldQueryMethods.CreatePostInDataBase
         }
     }
 }
