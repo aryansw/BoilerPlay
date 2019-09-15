@@ -17,11 +17,11 @@ namespace BoilerPlay
         {
             // This code is to read the cookie stored
             String id = Cookies.ReadCookie(this.Request, this.Response);
-            DataTable output = Database.Query.ExecuteReturnCommand("select ID,Email from Accounts WHERE ID = '" + id + "';");
+            //DataTable output = Database.Query.ExecuteReturnCommand("select ID,Email from Accounts WHERE ID = '" + id + "';");
             // Debug Test String s = output.Rows[0].ItemArray[1].ToString();
             /* The Following code segment is to initalize*/
-
-            var x = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
+            DatePrint0.InnerText = "HELLO THIS IS A TEST";
+            //var x = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
         /*
             String sportsBox = sportsComboBox.Text;
             String profeciencyBox = profeciencyComboBox.Text;
