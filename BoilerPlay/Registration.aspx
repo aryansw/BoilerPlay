@@ -42,7 +42,7 @@
                             <input type="text" id="desciption" name="description" class="form-control bg-light" placeholder="Description (Fun Facts/Interests)">
                         </div>
                         <div class="form-group text-center">
-                            <input class="btn btn-dark" type="submit" value="Submit">
+                            <button class="btn btn-dark" id="Register" runat="server" onServerClick="Reg_Click">SIGN UP</button>
                         </div>
                      </form>
                  </div>

@@ -15,8 +15,12 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /* The Following code segment is to initalize*/
-            /*
+            // This is a Cookie DO NOT DELETE MONAL
+
+            Cookies.ReadCookie(this.Request,this.Response);
+
+            /* The Following code segment is to initalize
+
             var allValues = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
 
             String sportsBox = sportsComboBox.Text;
@@ -53,8 +57,9 @@ namespace BoilerPlay
                     i = i - 1;
                 }
             }
+            */
 
-    */
+
 
             //for (int i = 0; i <)
 
