@@ -43,7 +43,7 @@ namespace BoilerPlay
             }
 
             /* The Following code segment is to initalize
-
+            
             var allValues = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
 
             String sportsBox = sportsComboBox.Text;
@@ -53,14 +53,7 @@ namespace BoilerPlay
             String timeBox1 = timeComboBox1.Text; //accept as hh:mm (smaller)
             String timeBox2 = timeComboBox2.Text; //accept as hh:mm (bigger value)
 
-            int timeBox2totalTime = ((Int32.Parse(timeBox2.Substring(0, 2))) * 60) + ((Int32.Parse(timeBox2.Substring(3, 5))));
-            int timeBox1totalTime = ((Int32.Parse(timeBox1.Substring(0, 2))) * 60) + ((Int32.Parse(timeBox1.Substring(3, 5))));
-            int timeDifference = timeBox2totalTime - timeBox1totalTime;
-
-            int hh = (timeDifference / 60);
-            int mm = (timeDifference % 60);
-
-            String timebox = hh.ToString() + ":" + mm.ToString();
+           
 
             DataTable dateFromDatabase = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT HelloWorld.Posts.DateTime FROM HelloWorld.Posts");
             string[] dates = new string[dateFromDatabase.Rows.Count];
@@ -74,19 +67,13 @@ namespace BoilerPlay
 
             for (int i = 0; i < (dates.Length); i++)
             {
-                if (dates[i].Substring(0, 10).Equals(dateBox) && (dates[i].Substring(11, 15).Equals(timeBox)))
+                if (dates[i].Substring(0, 10).Equals(dateBox) && (Int32.Parse(timeBox2.Substring(0, 2))>= (Int32.Parse((dates[i].Substring(11, 13))))) && (Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))) && (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15))))) && (Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
                 {
                     tempValues.Rows.RemoveAt(i);
                     i = i - 1;
                 }
             }
             */
-
-
-
-            //for (int i = 0; i <)
-
-            //x.Rows[0].ItemArray[0];
         }
 
     }

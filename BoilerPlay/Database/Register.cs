@@ -44,8 +44,8 @@ namespace BoilerPlay.Database
                         break;
                 }
                 //Database.Query.ExecuteNonReturnCommand("insert into Accounts VALUES('" + ID + "','" + Name + "');
-                Query.ExecuteNonReturnCommand(String.Format("INSERT INTO Accounts" +
-                   "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');",
+                Query.ExecuteNonReturnCommand(String.Format("INSERT INTO HelloWorld.Accounts" +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}');",
                     ID,
                     Name,
                     yr,
