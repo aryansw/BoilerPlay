@@ -95,14 +95,16 @@
                  </div>
             </div>
             <div class="col-md-12 col-10 text-center">  
-                <div class="col-md-8"></div>
-                <div class="col-md-4">
-                    <p> <asp:Calendar ID="Calendar" runat="server"></asp:Calendar></p>
+                <div class="row">
+                    <div class="col-md-4 col-6 ml-2"></div>
+                    <div class="col-md-6 col-6 ml-4">
+                        <p> <asp:Calendar ID="Calendar" runat="server"></asp:Calendar></p>
+                     </div>
                 </div>
                 <p class="m-3 ml-n5 mr-5">Time: <input type="time" min="00:00" max="23:59" id="appt" runat="server" name="time"></p>
             </div>
             <div class="form-group text-center">
-                    <button class="btn btn-dark" id="CreateEve" runat="server" onServerClick="CreateEve_ServerClick">Create Post</button>
+                 <button class="btn btn-dark" id="CreateEve" runat="server" onServerClick="CreateEve_ServerClick">Create Post</button>
             </div>
         </div>
         </div>

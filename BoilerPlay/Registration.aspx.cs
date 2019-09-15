@@ -47,7 +47,7 @@ namespace BoilerPlay
                 {
                     Database.Register.RegisterAccount(Name.Value.ToString(), description.Value.ToString(), Password.Value.ToString(), email.Value.ToString(), phone.Value.ToString(), Year);
 
-                    Cookies.WriteCookie(Database.HelloWorldQueryMethods.GenerateNewProfileID().ToString(), this.Response);
+                    Cookies.WriteCookie((Database.HelloWorldQueryMethods.GenerateNewProfileID()-1).ToString(), this.Response);
                     Response.Redirect("MainPage.aspx");
                 }
                 catch
