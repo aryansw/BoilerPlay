@@ -49,6 +49,18 @@ namespace BoilerPlay.Database
             }
             return posts.ToArray();
         }
+        public static void DeleteInvolvement(string PostID)
+        {
+            string sqlStatement = String.Format("DELETE FROM HelloWorld.`Involvements` WHERE Posts_PostID = '{0}';", PostID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
+        public static void DeleteUserFromInvolvement(string AccountID)
+        {
+            string sqlStatement = String.Format("DELETE FROM HelloWorld.`Involvements` WHERE Accounts_ID = '{0}';", AccountID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
         public static Posts[] GetAllPostsByLocation(string location)
         {
             var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Posts WHERE Location = '{0}';", location));

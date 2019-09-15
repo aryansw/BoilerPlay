@@ -20,7 +20,7 @@ namespace BoilerPlay
             // This is a Cookie DO NOT DELETE MONAL+
             successMessage.Visible = false;
 
-            Cookies.ReadCookie(this.Request,this.Response);
+            //Cookies.ReadCookie(this.Request,this.Response);
 
             if (!IsPostBack)
             {
@@ -92,6 +92,8 @@ namespace BoilerPlay
                         Posts_PostID = MainPageGlobals.Posts[x].PostID
                     };
                     HelloWorldQueryMethods.InsertInvolvement(involvement);
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Already Joined";
                 }
                 else
                     peopleText = String.Format("People Commited: {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
@@ -102,6 +104,7 @@ namespace BoilerPlay
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[x].Desc;
 
+                //UpdateMainPageGlobals
                 if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
                 {
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
@@ -111,7 +114,6 @@ namespace BoilerPlay
         }
         private void SetSuccessMessage()
         {
-
             //successMessage.Visible = true;
             //successPrint.InnerText = "You have been successfully added to the event";
         }
