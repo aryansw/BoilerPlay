@@ -2,12 +2,12 @@
 
 <!DOCTYPE html>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <head runat="server">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>BoilerPlay</title>
 </head>
 <body>
@@ -146,7 +146,7 @@
                                 <p><span runat="server" id="Gender0" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_0" class="btn btn-dark" onserverclick="button0_ServerClick_0">View Profile of Host</a>
+                                <a href="<%=this.host_name0%>" target="_blank" id="button_0" class="btn btn-dark" onserverclick="button0_ServerClick_0">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button0" class="btn btn-dark" onserverclick="button0_ServerClick">Join Event</button>
@@ -179,7 +179,7 @@
                                 <p><span runat="server" id="Gender1" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_1" class="btn btn-dark" onserverclick="button1_ServerClick_1">View Profile of Host</a>
+                                <a href="<%=this.host_name1%>" target="_blank" id="button_1" class="btn btn-dark" onserverclick="button1_ServerClick_1">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button1" class="btn btn-dark" onserverclick="button1_ServerClick">Join Event</button>
@@ -212,7 +212,7 @@
                                 <p><span runat="server" id="Gender2" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_2" class="btn btn-dark" onserverclick="button2_ServerClick_2">View Profile of Host</a>
+                                <a href="<%=this.host_name2%>" target="_blank" id="button_2" class="btn btn-dark" onserverclick="button2_ServerClick_2">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button2" class="btn btn-dark" onserverclick="button2_ServerClick">Join Event</button>
@@ -244,7 +244,7 @@
                                 <p><span runat="server" id="Gender3" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_3" class="btn btn-dark" onserverclick="button3_ServerClick_3">View Profile of Host</a>
+                                <a href="<%=this.host_name3%>" target="_blank" id="button_3" class="btn btn-dark" onserverclick="button3_ServerClick_3">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button3"  class="btn btn-dark" onserverclick="button3_ServerClick">Join Event</button>
@@ -276,7 +276,7 @@
                                 <p><span runat="server" id="Gender4" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_4" class="btn btn-dark" onserverclick="button4_ServerClick_4">View Profile of Host</a>
+                                <a href="<%=this.host_name4%>" target="_blank" id="button_4" class="btn btn-dark" onserverclick="button4_ServerClick_4">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button4" class="btn btn-dark" onserverclick="button4_ServerClick">Join Event</button>
@@ -308,7 +308,7 @@
                                 <p><span runat="server" id="Gender5" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_5" class="btn btn-dark" onserverclick="button5_ServerClick_5">View Profile of Host</a>
+                                <a href="<%=this.host_name5%>" target="_blank" id="button_5" class="btn btn-dark" onserverclick="button5_ServerClick_5">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button5" class="btn btn-dark" onserverclick="button5_ServerClick">Join Event</button>
@@ -340,7 +340,7 @@
                                 <p><span runat="server" id="Gender6" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_6" class="btn btn-dark" onserverclick="button6_ServerClick_6">View Profile of Host</a>
+                                <a href="<%=this.host_name6%>" target="_blank" id="button_6" class="btn btn-dark" onserverclick="button6_ServerClick_6">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button6" class="btn btn-dark" onserverclick="button6_ServerClick">Join Event</button>
@@ -372,7 +372,7 @@
                                 <p><span runat="server" id="Gender7" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_7" class="btn btn-dark" onserverclick="button7_ServerClick_7">View Profile of Host</a>
+                                <a href="<%=this.host_name7%>" target="_blank" id="button_7" class="btn btn-dark" onserverclick="button7_ServerClick_7">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button7" class="btn btn-dark" onserverclick="button7_ServerClick">Join Event</button>
@@ -404,7 +404,7 @@
                                 <p><span runat="server" id="Gender8" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_8" class="btn btn-dark" onserverclick="button8_ServerClick_8">View Profile of Host</a>
+                                <a href="<%=this.host_name8%>" target="_blank" id="button_8" class="btn btn-dark" onserverclick="button8_ServerClick_8">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button8" class="btn btn-dark" onserverclick="button8_ServerClick">Join Event</button>
@@ -436,7 +436,7 @@
                                 <p><span runat="server" id="Gender9" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="DisplayProfile.aspx" target="_blank" id="button_9" class="btn btn-dark" onserverclick="button9_ServerClick_9">View Profile of Host</a>
+                                <a href="<%=this.host_name9%>" target="_blank" id="button_9" class="btn btn-dark" onserverclick="button9_ServerClick_9">View Profile of Host</a>
                             </div>
                             <div class="col-md-6 col-6">
                                 <button runat="server" id="button9" class="btn btn-dark" onserverclick="button9_ServerClick">Join Event</button>
@@ -453,6 +453,24 @@
     </div>
     
     </form>
+
+    <div class="container">
+        <div class="row mt-3 mb-3 text-right">
+            <div class="col-12 col-md-12">
+                <p>Next>> </p>
+                <button runat="server" id="PageButton0" class="btn btn-dark p-2">1</button>
+                <button runat="server" id="PageButton1" class="btn btn-dark p-2">2</button>
+                <button runat="server" id="PageButton2" class="btn btn-dark p-2">3</button>
+                <button runat="server" id="PageButton3" class="btn btn-dark p-2">4</button>
+                <button runat="server" id="PageButton4" class="btn btn-dark p-2">5</button>
+                <button runat="server" id="PageButton5" class="btn btn-dark p-2">6</button>
+                <button runat="server" id="PageButton6" class="btn btn-dark p-2">7</button>
+                <button runat="server" id="PageButton7" class="btn btn-dark p-2">8</button>
+                <button runat="server" id="PageButton8" class="btn btn-dark p-2">9</button>
+                <button runat="server" id="PageButton9" class="btn btn-dark p-2">10</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

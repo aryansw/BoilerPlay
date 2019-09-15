@@ -13,6 +13,15 @@ namespace BoilerPlay {
     public partial class DisplayProfile {
         
         /// <summary>
+        /// name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl name;
+        
+        /// <summary>
         /// registration_form control.
         /// </summary>
         /// <remarks>
@@ -20,15 +29,6 @@ namespace BoilerPlay {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm registration_form;
-        
-        /// <summary>
-        /// Name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Name;
         
         /// <summary>
         /// email control.
