@@ -199,15 +199,16 @@ namespace BoilerPlay.Database
         public static void UpdateAccount(Account acc)
         {
             //Database.Query.ExecuteNonReturnCommand("Update Accounts VALUES('" + ID + "','" + Name + "');
-            Query.ExecuteNonReturnCommand(String.Format("Update 'HelloWorld'.'Accounts' SET" +
-               "'ID' = '{0}', 'Name' = '{1}', 'Year' = '{2}', 'Desc' = '{3}', 'Password' = '{4}', 'Email' = '{5}', 'Phone' = '{6}' WHERE ('ID' = '{0}');",
-                acc.ID,
-                acc.Name,
-                acc.Year,
-                Register.FixApostrophe(acc.Desc),
-                acc.Password,
-                acc.Email,
-                acc.Phone));
+            Query.ExecuteNonReturnCommand("DELETE FROM `HelloWorld`.`Accounts` WHERE (`ID` = '"+acc.ID+"');");
+            Query.ExecuteNonReturnCommand(String.Format("INSERT INTO HelloWorld.Accounts " +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}');",
+                    acc.ID,
+                    acc.Name,
+                    acc.Year,
+                    Register.FixApostrophe(acc.Desc),
+                    acc.Password,
+                    acc.Email,
+                    acc.Phone));
         }
         public static int IntfromYear(string s)
         {
