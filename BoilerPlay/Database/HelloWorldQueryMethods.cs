@@ -69,6 +69,11 @@ namespace BoilerPlay.Database
             }
             return highestPostNumber + 1;
         }
+        public static int GenerateNewProfileID()
+        {
+            var ProfileID = Query.ExecuteReturnCommand("SELECT HelloWorld.Accounts.ID FROM HelloWorld.Accounts ORDER by ID asc");
+            return Convert.ToInt32(ProfileID.Rows[ProfileID.Rows.Count-1].ItemArray[0].ToString()) + 1;
+        }
         public static Account GetAccountFromCookie(HttpRequest Request, HttpResponse Response)
         {
             string cookieValue = Cookies.ReadCookie(Request, Response);

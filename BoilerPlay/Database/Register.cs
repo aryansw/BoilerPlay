@@ -25,8 +25,34 @@ namespace BoilerPlay.Database
         {
             if (!IsEmailUsed(Email))
             {
-                //String ID = Database.Query.ExecuteReturnCommand("select ID from Accounts order by ID asc");
-                Database.Query.ExecuteNonReturnCommand("insert into Accounts VALUES ");
+                int ID = Database.HelloWorldQueryMethods.GenerateNewProfileID();
+                int yr;
+                switch (Year)
+                {
+                    case "Freshman":
+                        yr = 0;
+                        break;
+                    case "Sophomore":
+                        yr = 1;
+                        break;
+                    case "Junior":
+                        yr = 2;
+                        break;
+                    case "Senior":
+                    default:
+                        yr = 3;
+                        break;
+                }
+                //Database.Query.ExecuteNonReturnCommand("insert into Accounts VALUES('" + ID + "','" + Name + "');
+                Query.ExecuteNonReturnCommand(String.Format("INSERT INTO Accounts" +
+                   "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');",
+                    ID,
+                    Name,
+                    yr,
+                    Desc,
+                    Password,
+                    Email,
+                    PhoneNo));
             }
         }
     }
