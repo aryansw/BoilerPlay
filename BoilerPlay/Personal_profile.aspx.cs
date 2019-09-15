@@ -9,11 +9,15 @@ namespace BoilerPlay
 {
     public partial class Personal_profile : System.Web.UI.Page
     {
+        Database.HelloWorldQueryMethods.Account acc;
         protected void Page_Load(object sender, EventArgs e)
         {
             Cookies.WriteCookie("10001", this.Response);
             string x = Cookies.ReadCookie(this.Request, this.Response);
-            Database.HelloWorldQueryMethods.Account acc = Database.HelloWorldQueryMethods.GetAccountFromCookie(this.Request, this.Response);
+            acc = Database.HelloWorldQueryMethods.GetAccountFromCookie(this.Request, this.Response);
+            Error_Flag.Visible = false;
+            Success.Visible = false;
+
             Edit.Visible = true;
             SubmitChanges.Visible = false;
             label1.Visible = false;
@@ -56,12 +60,39 @@ namespace BoilerPlay
 
         protected void SubmitChanges_ServerClick(object sender, EventArgs e)
         {
+            acc.Name = ProfileName.Value.ToString();
+            Console.WriteLine(acc.Name);
+            acc.Phone = Profile_PhoneNumber.Value.ToString();
+            acc.Year = Database.HelloWorldQueryMethods.IntfromYear(Profile_Year.Value.ToString());
+            acc.Desc = Profile_Description.Value.ToString();
+            acc.Email = ProfileEmail.Value.ToString();
+            Database.HelloWorldQueryMethods.UpdateAccount(acc);
             Edit.Visible = true;
             SubmitChanges.Visible = false;
             label1.Visible = false;
             label2.Visible = false;
             Profile_Password1.Visible = false;
             Profile_Password.Visible = false;
+            ProfileName.Attributes.Add("readonly", "readonly");
+            ProfileEmail.Attributes.Add("readonly", "readonly");
+            Profile_Description.Attributes.Add("readonly", "readonly");
+            Profile_PhoneNumber.Attributes.Add("readonly", "readonly");
+            Profile_Year.Attributes.Add("readonly", "readonly");
+            Profile_Password.Attributes.Add("readonly", "readonly");
+            Profile_Password1.Attributes.Add("readonly", "readonly");
+            if (Profile_Password.Value != null)
+            {
+                if (Profile_Password.Value.ToString().Equals(Profile_Password1.Value.ToString()))
+                {
+                    acc.Password = Profile_Password.Value.ToString();
+                }
+                else
+                {
+                    Error_Flag.Visible = true;
+                }
+            }
+            
+            Success.Visible = true;
         }
     }
 }

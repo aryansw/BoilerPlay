@@ -33,6 +33,14 @@
                                 <button class="btn btn-dark" id="Edit" runat="server" onserverclick="Edit_ServerClick">Edit</button>
                             </div>
                         </div>
+                        <div style ="width:100%" class="text-center pb-n2">
+                            <div class ="alert alert-danger text-center px-5 mx-5 pb-n2" runat="server" role="alert" id="Error_Flag" >
+                                <p class="pb-n2">Passwords do not match</p>
+                            </div>
+                            <div class ="alert alert-success text-center px-5 mx-5 pb-n2" runat="server" role="alert" id="Success" >
+                                <p class="pb-n2">Details Updated!</p>
+                            </div>
+                        </div>
                         <div class="form-group m-3">
                             <input type="text" class="form-control bg-light" runat="server" id="ProfileName" name="name" placeholder="Profile_Name" value="" required>
                         </div>
@@ -54,11 +62,11 @@
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <p class="text-left mt-3" id="label1" runat="server">Enter Password:</p>
-                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password" placeholder="Profile_Password">
+                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password" placeholder="Leave Blank to use old password">
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <p class="text-left mt-3" id="label2" runat="server">Re-enter Password:</p>
-                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password1" placeholder="Profile_Password">
+                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password1" placeholder="">
                                 </div>
                             </div>
                         </div>

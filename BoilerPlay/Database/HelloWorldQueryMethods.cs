@@ -195,7 +195,36 @@ namespace BoilerPlay.Database
             };
             return newpost;
         }
-        public static string YearfromInt(int x)
+
+        public static void UpdateAccount(Account acc)
+        {
+            //Database.Query.ExecuteNonReturnCommand("Update Accounts VALUES('" + ID + "','" + Name + "');
+            Query.ExecuteNonReturnCommand(String.Format("Update 'HelloWorld'.'Accounts' SET" +
+               "'ID' = '{0}', 'Name' = '{1}', 'Year' = '{2}', 'Desc' = '{3}', 'Password' = '{4}', 'Email' = '{5}', 'Phone' = '{6}' WHERE ('ID' = '{0}');",
+                acc.ID,
+                acc.Name,
+                acc.Year,
+                Register.FixApostrophe(acc.Desc),
+                acc.Password,
+                acc.Email,
+                acc.Phone));
+        }
+        public static int IntfromYear(string s)
+        {
+            switch (s)
+            {
+                case "Freshman":
+                    return 0;
+                case "Sophomore":
+                    return 1;
+                case "Junior":
+                    return 2;
+                case "Senior":
+                default:
+                    return 3;
+            }
+        }
+        public static string YearfromInt(int  x)
         {
             switch (x)
             {
