@@ -45,18 +45,17 @@ namespace BoilerPlay
             }
 
 
-            /* The Following code segment is to initalize
             
             var allValues = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
 
-            String sportsBox = sportsComboBox.Text;
-            String profeciencyBox = profeciencyComboBox.Text;
-            String genderBox = genderComboxBox.Text;
-            String dateBox = dateTimePicker.Value.ToString("yyyy-MM-dd");
-            String timeBox1 = timeComboBox1.Text; //accept as hh:mm (smaller)
-            String timeBox2 = timeComboBox2.Text; //accept as hh:mm (bigger value)
+            String sportsBox = SportFilter.Value;
+            String profeciencyBox = ProficiencyFilter.Value;
+            String genderBox = GenderFilter.Value;
+            String dateBox = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
+            String timeBox1 = TimeStartFilter.Value; //accept as hh:mm (smaller)
+            String timeBox2 = TimeEndFilter.Value; //accept as hh:mm (bigger value)
+            
 
-           
 
             DataTable dateFromDatabase = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT HelloWorld.Posts.DateTime FROM HelloWorld.Posts");
             string[] dates = new string[dateFromDatabase.Rows.Count];
@@ -76,7 +75,6 @@ namespace BoilerPlay
                     i = i - 1;
                 }
             }
-            */
         }
         private void SetCards(int index = -1)
         {

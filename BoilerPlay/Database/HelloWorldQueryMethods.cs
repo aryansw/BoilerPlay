@@ -204,6 +204,69 @@ namespace BoilerPlay.Database
             };
             return account;
         }
+        public static Posts GetPostsFromPostID(string post_id)
+        {
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Posts WHERE PostID = '{0}'", post_id));
+            Posts newpost = new Posts
+            {
+                PostID = output.Rows[0].ItemArray[0].ToString(),
+                Title = output.Rows[0].ItemArray[1].ToString(),
+                Posts_Name = output.Rows[0].ItemArray[2].ToString(),
+                DateTime = DateTime.Parse(output.Rows[0].ItemArray[3].ToString()),
+                Gender = output.Rows[0].ItemArray[4].ToString(),
+                Desc = output.Rows[0].ItemArray[5].ToString(),
+                Location = output.Rows[0].ItemArray[6].ToString(),
+                NumberNeeded = Convert.ToInt32(output.Rows[0].ItemArray[7].ToString()),
+                Proficiency = output.Rows[0].ItemArray[8].ToString()
+                
+            };
+            return newpost;
+        }
+
+        public static void UpdateAccount(Account acc)
+        {
+            //Database.Query.ExecuteNonReturnCommand("Update Accounts VALUES('" + ID + "','" + Name + "');
+            Query.ExecuteNonReturnCommand("DELETE FROM `HelloWorld`.`Accounts` WHERE (`ID` = '"+acc.ID+"');");
+            Query.ExecuteNonReturnCommand(String.Format("INSERT INTO HelloWorld.Accounts " +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}');",
+                    acc.ID,
+                    acc.Name,
+                    acc.Year,
+                    Register.FixApostrophe(acc.Desc),
+                    acc.Password,
+                    acc.Email,
+                    acc.Phone));
+        }
+        public static int IntfromYear(string s)
+        {
+            switch (s)
+            {
+                case "Freshman":
+                    return 0;
+                case "Sophomore":
+                    return 1;
+                case "Junior":
+                    return 2;
+                case "Senior":
+                default:
+                    return 3;
+            }
+        }
+        public static string YearfromInt(int  x)
+        {
+            switch (x)
+            {
+                case 1:
+                    return "Freshman";
+                case 2:
+                    return "Sophomore";
+                case 3:
+                    return "Junior";
+                case 4:
+                default:
+                    return "Senior";
+            }
+        }
         public struct Involvement
         {
             public string Posts_PostID;
