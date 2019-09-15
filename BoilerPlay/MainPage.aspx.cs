@@ -164,6 +164,12 @@ namespace BoilerPlay
                     string peopleText;
                     int totalNumberOfPeopleNeeded = MainPageGlobals.Posts[postCounter].NumberNeeded;
                     int currentNumber = HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[postCounter].PostID);
+
+
+                    if(currentNumber == 0)
+                        ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+
+
                     if (index == x)
                     {
                         peopleText = String.Format("People Commited: {0}/{1}", currentNumber + 1, totalNumberOfPeopleNeeded);
