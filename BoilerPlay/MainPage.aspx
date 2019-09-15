@@ -128,7 +128,7 @@
                                 <p>Description: <span runat="server" id="Description0" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender0" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender0" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -157,7 +157,7 @@
                                 <p>Description: <span runat="server" id="Description1" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender1" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender1" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -187,7 +187,7 @@
                                 <p>Description: <span runat="server" id="Description2" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender2" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender2" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -216,7 +216,7 @@
                                 <p>Description: <span runat="server" id="Description3" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender3" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender3" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -245,7 +245,7 @@
                                 <p>Description: <span runat="server" id="Description4" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender4" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender4" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -274,7 +274,7 @@
                                 <p>Description: <span runat="server" id="Description5" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender5" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender5" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -303,7 +303,7 @@
                                 <p>Description: <span runat="server" id="Description6" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender6" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender6" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -332,7 +332,7 @@
                                 <p>Description: <span runat="server" id="Description7" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender7" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender7" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -361,7 +361,7 @@
                                 <p>Description: <span runat="server" id="Description8" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender8" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender8" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -390,7 +390,7 @@
                                 <p>Description: <span runat="server" id="Description9" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Description: <span runat="server" id="Gender9" class="card-text">Gender:</span></p>
+                                <p>Gender: <span runat="server" id="Gender9" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
