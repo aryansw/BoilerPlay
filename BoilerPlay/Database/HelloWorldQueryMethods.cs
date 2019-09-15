@@ -39,6 +39,36 @@ namespace BoilerPlay.Database
             }
             return posts.ToArray();
         }
+        public static Posts[] GetAllPosts()
+        {
+            var output = Query.ExecuteReturnCommand("SELECT * FROM HelloWorld.Posts");
+
+            List<Posts> posts = new List<Posts>();
+            for (int x = 0; x < output.Rows.Count; x++)
+            {
+                Posts newPost = new Posts();
+                newPost.PostID = output.Rows[x].ItemArray[0].ToString();
+                newPost.Title = output.Rows[x].ItemArray[1].ToString();
+                newPost.Posts_Name = output.Rows[x].ItemArray[2].ToString();
+                newPost.DateTime = DateTime.Parse(output.Rows[x].ItemArray[3].ToString());
+                newPost.Gender = output.Rows[x].ItemArray[4].ToString();
+                newPost.Desc = output.Rows[x].ItemArray[5].ToString();
+                newPost.Location = output.Rows[x].ItemArray[6].ToString();
+                newPost.NumberNeeded = Convert.ToInt32(output.Rows[x].ItemArray[7].ToString());
+                newPost.Proficiency = output.Rows[x].ItemArray[8].ToString();
+                posts.Add(newPost);
+            }
+            return posts.ToArray();
+        }
+        public static int GetNumberOfPeopleInEvent(string PostID)
+        {
+            var output = Query.ExecuteReturnCommand("SELECT * FROM HelloWorld.Involvements");
+            return output.Rows.Count;
+        }
+        public static void DeletePostRow(string postID)
+        {
+            Query.ExecuteNonReturnCommand(String.Format("DELETE FROM HelloWorld.Posts WHERE PostID = {0};", postID));
+        }
         public static void CreatePostInDataBase(Posts postToAdd)
         {
             string dateTimeString = postToAdd.DateTime.ToString("yyyy-MM-dd hh:mm:ss") + ".000";//2018-09-08 17:51:04.000

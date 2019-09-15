@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    <div class="card" runat="server" id="card0">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -41,7 +41,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card1">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -55,7 +55,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card2">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -69,7 +69,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-    <div class="card">
+    <div class="card" runat="server" id="card3">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -83,7 +83,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card4">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -97,7 +97,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card5">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -111,7 +111,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card6">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -125,7 +125,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card7">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -139,7 +139,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card8">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
@@ -153,7 +153,7 @@
             <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-     <div class="card">
+     <div class="card" runat="server" id="card9">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
            <h4 class="card-title"><b>Sport name</b></h4>
