@@ -128,5 +128,11 @@ namespace BoilerPlay
         {
             Response.Redirect("Create_Event.aspx");
         }
+
+        protected void logOutBtn_Click(object sender, EventArgs e)
+        {
+            Cookies.DeleteCookie(this.Request, this.Response);
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }

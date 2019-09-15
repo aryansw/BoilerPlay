@@ -101,5 +101,11 @@ namespace BoilerPlay
         {
             Response.Redirect("Personal_profile.aspx");
         }
+
+        protected void logOutBtn_Click(object sender, EventArgs e)
+        {
+            Cookies.DeleteCookie(this.Request, this.Response);
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }

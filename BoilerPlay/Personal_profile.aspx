@@ -27,6 +27,13 @@
              </div>
         </div>
     </div>
+    <div class="col-md-5"></div>
+    <div style="text-align:right;margin-right:20px;margin-top:0px">
+        <asp:Button runat="server" CssClass="btn btn-secondary mb-5" ID="logOutBtn" style="font-size: 11.9px; font-weight: bold" OnClick="logOutBtn_Click" Text="Log Out" />
+    </div>
+
+
+
     <div class="container">
        <div class="row pt-5 text-center">
            <div class="col-md-1"></div>

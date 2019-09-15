@@ -17,7 +17,7 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(String.IsNullOrWhiteSpace(Cookies.ReadCookie(this.Request, this.Response)))
+            if (String.IsNullOrWhiteSpace(Cookies.ReadCookie(this.Request, this.Response)))
             {
                 Response.Redirect("LoginPage.aspx");
             }
@@ -25,7 +25,7 @@ namespace BoilerPlay
             successMessage.Visible = false;
             allEventsBtn.Enabled = false;
 
-            foreach(var sport in Database.DatabaseOptions.Posts_Sports.SportsCombinations)
+            foreach (var sport in Database.DatabaseOptions.Posts_Sports.SportsCombinations)
                 SportFilter.Items.Add(sport);
             //Cookies.ReadCookie(this.Request,this.Response);
 
@@ -33,10 +33,10 @@ namespace BoilerPlay
             {
                 if (!string.IsNullOrEmpty(Request.QueryString["myEvents"]))
                 {
-                   if(Request.QueryString["myEvents"] == "true")
-                   {
+                    if (Request.QueryString["myEvents"] == "true")
+                    {
                         myEventBtn_Click(new object(), EventArgs.Empty);
-                   }
+                    }
                     else
                         SetCards();
                 }
@@ -45,41 +45,11 @@ namespace BoilerPlay
             }
 
 
-            
-            var allValues = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
 
-            String sportsBox = SportFilter.Value;
-            String profeciencyBox = ProficiencyFilter.Value;
-            String genderBox = GenderFilter.Value;
-            String dateBox = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
-
-            String timeBox1 = TimeStartFilter.Text; //accept as hh:mm (smaller)
-            String timeBox2 = TimeEndFilter.Text; //accept as hh:mm (bigger value)
-            
-
-
-            DataTable dateFromDatabase = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT HelloWorld.Posts.DateTime FROM HelloWorld.Posts");
-            string[] dates = new string[dateFromDatabase.Rows.Count];
-            for (int x = 0; x < dateFromDatabase.Rows.Count; x++)
-            {
-                dates[x] = dateFromDatabase.Rows[x].ItemArray[0].ToString();
-            }
-
-            var tempValues = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT * FROM HelloWorld.Posts WHERE Gender ='" + genderBox + "' && Profeciency = '" + profeciencyBox + "' && Sports = '" + sportsBox + "';");
-
-
-            for (int i = 0; i < (dates.Length); i++)
-            {
-                if (dates[i].Substring(0, 10).Equals(dateBox) && (Int32.Parse(timeBox2.Substring(0, 2))>= (Int32.Parse((dates[i].Substring(11, 13))))) && (Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))) && (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15))))) && (Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
-                {
-                    tempValues.Rows.RemoveAt(i);
-                    i = i - 1;
-                }
-            }
         }
         private void SetCards(int index = -1)
         {
-            if(index == -1)
+            if (index == -1)
                 MainPageGlobals.Posts = HelloWorldQueryMethods.GetAllPosts();
 
             string AccountID = Cookies.ReadCookie(this.Request, this.Response);
@@ -92,6 +62,7 @@ namespace BoilerPlay
             for (int x = 0; x < 10; x++)
             {
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+                ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = false;
             }
             for (int x = 0; x < count; x++)
             {
@@ -112,6 +83,7 @@ namespace BoilerPlay
                     HelloWorldQueryMethods.InsertInvolvement(involvement);
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
                 }
                 else
                     peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
@@ -124,7 +96,6 @@ namespace BoilerPlay
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[x].Gender;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[x].Title;
 
-                ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = false;
                 //UpdateMainPageGlobals
                 if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
                 {
@@ -132,10 +103,15 @@ namespace BoilerPlay
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
                 }
-                else if(currentNumber >= totalNumberOfPeopleNeeded)
+                else if (currentNumber >= totalNumberOfPeopleNeeded)
                 {
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Event Full";
+                }
+                else if (index != x)
+                {
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = false;
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Join Event";
                 }
             }
         }
@@ -268,12 +244,6 @@ namespace BoilerPlay
             SetCards();
         }
 
-        protected void logOutBtn_Click(object sender, EventArgs e)
-        {
-            Cookies.DeleteCookie(this.Request, this.Response);
-            Response.Redirect("LoginPage.aspx");
-        }
-
         protected void button10_ServerClick(object sender, EventArgs e)
         {
             UnSubscribeFromEvent(0);
@@ -330,6 +300,130 @@ namespace BoilerPlay
 
             HelloWorldQueryMethods.DeleteInvolvement(postID, accountID);
             SetCards(-1);
+        }
+
+        protected void logOutBtn_Click1(object sender, EventArgs e)
+        {
+            Cookies.DeleteCookie(this.Request, this.Response);
+            Response.Redirect("LoginPage.aspx");
+        }
+
+        protected void filterBtn_Click(object sender, EventArgs e)
+        {
+            var allValues = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT * FROM HelloWorld.Posts;");
+
+            String sportsBox = SportFilter.Value;
+            String profeciencyBox = ProficiencyFilter.Value;
+            String genderBox = GenderFilter.Value;
+            String dateBox = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
+
+            String timeBox1 = TimeStartFilter.Text; //accept as hh:mm (smaller)
+            String timeBox2 = TimeEndFilter.Text; //accept as hh:mm (bigger value)
+
+
+
+            //DataTable dateFromDatabase = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT HelloWorld.Posts.DateTime FROM HelloWorld.Posts");
+            string[] dates = new string[allValues.Rows.Count];
+            for (int x = 0; x < allValues.Rows.Count; x++)
+            {
+                dates[x] = DateTime.Parse(allValues.Rows[x].ItemArray[3].ToString()).ToString("yyyy-MM-dd hh:mm");//.Substring(0, 10);
+                                                                     //if(!dates[x].Equals(dateBox))
+                                                                     //{
+                                                                     //allValues.Rows.RemoveAt(x);
+                                                                     //x--;
+                                                                     //}
+            }
+
+            string GenderEquals = "=";
+            if (String.IsNullOrWhiteSpace(genderBox))
+                GenderEquals = "!=";
+
+            string ProficencyEquals = "=";
+            if (String.IsNullOrWhiteSpace(profeciencyBox))
+                ProficencyEquals = "!=";
+
+            string SportsEquals = "=";
+            if (String.IsNullOrWhiteSpace(sportsBox))
+                SportsEquals = "!=";
+
+            string cmdString = "SELECT * FROM HelloWorld.Posts WHERE Gender " + GenderEquals + "'" + genderBox + "' && Proficiency " + ProficencyEquals + " '" + profeciencyBox + "' && Title " + SportsEquals + " '" + sportsBox + "';";
+            var tempValues = BoilerPlay.Database.Query.ExecuteReturnCommand(cmdString);
+
+
+            int count = dates.Length;
+            int numberRemoved = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (!String.IsNullOrWhiteSpace(dateBox))
+                {
+                    string subString = dates[i].Substring(0, 10);
+                    if (subString.Equals(dateBox))
+                    {
+                        if (String.IsNullOrWhiteSpace(timeBox2) != true && String.IsNullOrWhiteSpace(timeBox1) != true)
+                        {
+                            if ((Int32.Parse(timeBox2.Substring(0, 2)) >= (Int32.Parse((dates[i].Substring(11, 13))))))
+                            {
+                                if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))))
+                                {
+                                    if (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15)))))
+                                    {
+                                        if ((Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
+                                        {
+                                            tempValues.Rows.RemoveAt(i);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        tempValues.Rows.RemoveAt(i - numberRemoved);
+                        numberRemoved++;
+                    }
+                }
+                else
+                {
+                    if (String.IsNullOrWhiteSpace(timeBox2) != true && String.IsNullOrWhiteSpace(timeBox1) != true)
+                    {
+                        if ((Int32.Parse(timeBox2.Substring(0, 2)) >= (Int32.Parse((dates[i].Substring(11, 13))))))
+                        {
+                            if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))))
+                            {
+                                if (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15)))))
+                                {
+                                    if ((Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
+                                    {
+                                        tempValues.Rows.RemoveAt(i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            HelloWorldQueryMethods.Posts[] posts = new HelloWorldQueryMethods.Posts[tempValues.Rows.Count];
+
+            for(int x = 0; x < tempValues.Rows.Count; x++)
+            {
+                posts[x].PostID = tempValues.Rows[x].ItemArray[0].ToString();
+                posts[x].Title = tempValues.Rows[x].ItemArray[1].ToString();
+                posts[x].Posts_Name = tempValues.Rows[x].ItemArray[2].ToString();
+                posts[x].DateTime = DateTime.Parse(tempValues.Rows[x].ItemArray[3].ToString());
+                posts[x].Gender = tempValues.Rows[x].ItemArray[4].ToString();
+                posts[x].Desc = tempValues.Rows[x].ItemArray[5].ToString();
+                posts[x].Location = tempValues.Rows[x].ItemArray[6].ToString();
+                posts[x].NumberNeeded = Convert.ToInt32(tempValues.Rows[x].ItemArray[7].ToString());
+                posts[x].Proficiency = tempValues.Rows[x].ItemArray[8].ToString();
+            }
+            MainPageGlobals.Posts = posts;
+
+            SetCards(-2);
+        }
+
+        protected void ClearCalendarBtn_Click(object sender, EventArgs e)
+        {
+            Calendar1.SelectedDates.Clear();
         }
     }
 }

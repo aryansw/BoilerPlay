@@ -30,8 +30,15 @@
              </div>
         </div>
     </div>
+    <div class="col-md-5"></div>
+    <div style="text-align:right;margin-right:20px;margin-top:0px">
+        <asp:Button runat="server" CssClass="btn btn-secondary mb-5" ID="logOutBtn" style="font-size: 11.9px; font-weight: bold" OnClick="logOutBtn_Click1" Text="Log Out" />
+    </div>
+    
+
+
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-4"></div>
         <div class="col-md-6">
             <div style="width:80%; text-align:center">
                 <div class="alert alert-success" runat="server" id="successMessage" role="alert">
@@ -57,12 +64,14 @@
                                     <div class="form-group">
                                         <label for="Sport">Sport:</label>
                                         <select runat="server" id="SportFilter">
+                                            <option></option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <p>Date:</p>
                                     <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                                    <asp:Button ID="ClearCalendarBtn" runat="server" Text="Clear Calendar" OnClick="ClearCalendarBtn_Click" />
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
@@ -78,6 +87,7 @@
                                     <div class="form-group">
                                         <label for="Proficiency">Proficiency:</label>
                                         <select runat="server" id="ProficiencyFilter">
+                                            <option></option>
                                             <option>Beginner</option>
                                             <option>Amatuer</option>
                                             <option>Skilled</option>
@@ -89,12 +99,20 @@
                                     <div class="form-group">
                                         <label for="Gender">Gender:</label>
                                         <select runat="server" id="GenderFilter">
+                                            <option></option>
                                             <option>Both</option>
                                             <option>Male</option>
                                             <option>Female</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Apply Filters</label>
+                                        <asp:Button runat="server" ID="filterBtn" OnClick="filterBtn_Click"/>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </form>
                     </div>

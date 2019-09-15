@@ -58,6 +58,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.WebControls.Button profileBtn;
         
         /// <summary>
+        /// logOutBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logOutBtn;
+        
+        /// <summary>
         /// successMessage control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
+        /// ClearCalendarBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ClearCalendarBtn;
+        
+        /// <summary>
         /// TimeStartFilter control.
         /// </summary>
         /// <remarks>
@@ -128,6 +146,15 @@ namespace BoilerPlay {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect GenderFilter;
+        
+        /// <summary>
+        /// filterBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button filterBtn;
         
         /// <summary>
         /// card0 control.
