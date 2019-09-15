@@ -11,6 +11,10 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+        protected void CreateEve_ServerClick(object sender, EventArgs e)
+        {
             String sportsBox = SportName.Value;
             String profeciencyBox = SportName.Value;
             String genderBox = Gender.Value;
@@ -18,11 +22,13 @@ namespace BoilerPlay
             String locationBox = Location.Value;
             String sportDescriptionBox = SportDescription.Value;
             String dateBox = Calendar.SelectedDate.ToString("yyyy-MM-dd");
+            String timeBox = appt.Value;
 
+        //    Database.HelloWorldQueryMethods.Posts();
 
             //String timeBox1 = timeComboBox1.Text; //accept as hh:mm (smaller)
             // String timeBox2 = timeComboBox2.Text; //accept as hh:mm (bigger value)
-           // Database.HelloWorldQueryMethods.CreatePostInDataBase
+            // Database.HelloWorldQueryMethods.CreatePostInDataBase
         }
     }
 }
