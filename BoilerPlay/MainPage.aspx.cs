@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using BoilerPlay.Database;
+using System.Web.Services;
 
 namespace BoilerPlay
 {
@@ -16,31 +16,16 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // This is a Cookie DO NOT DELETE MONAL
+            // This is a Cookie DO NOT DELETE MONAL+
+            successMessage.Visible = false;
 
             Cookies.ReadCookie(this.Request,this.Response);
 
-            HelloWorldQueryMethods.Posts[] allPosts = HelloWorldQueryMethods.GetAllPosts();
-
-            int count = allPosts.Length;
-            if (count > 10)
-                count = 10;
-            
-            for(int x = 0; x < 10; x++)
+            if (!IsPostBack)
             {
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+                SetCards();
             }
-            for (int x = 0; x < count; x++)
-            {
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
 
-                string peopleText = String.Format("People Commited {0}/{1}", allPosts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(allPosts[x].PostID));
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = allPosts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = allPosts[x].Location;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = allPosts[x].Proficiency;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = allPosts[x].Desc;
-            }
 
             /* The Following code segment is to initalize
             
@@ -75,6 +60,114 @@ namespace BoilerPlay
             }
             */
         }
+        private void SetCards()
+        {
+            MainPageGlobals.Posts = HelloWorldQueryMethods.GetAllPosts();
 
+            int count = MainPageGlobals.Posts.Length;
+            if (count > 10)
+                count = 10;
+
+            for (int x = 0; x < 10; x++)
+            {
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+            }
+            for (int x = 0; x < count; x++)
+            {
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
+
+                string peopleText = String.Format("People Commited {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[x].Desc;
+            }
+
+        }
+        private void SetSuccessMessage()
+        {
+
+            successMessage.Visible = true;
+            successPrint.InnerText = "You have been successfully added to the event";
+        }
+        protected void button0_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 0].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+        protected void button1_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 1].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button2_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 2].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button3_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 3].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button4_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 4].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button5_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 5].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button6_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 6].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button7_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 7].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button8_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 8].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
+
+        protected void button9_ServerClick(object sender, EventArgs e)
+        {
+            string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 9].PostID;
+            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            SetCards();
+            SetSuccessMessage();
+        }
     }
 }

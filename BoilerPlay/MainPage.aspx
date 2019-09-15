@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <head runat="server">
@@ -19,6 +20,9 @@
                 <div class="row text-center">
                     <div class="col-6 col-md-6"><a href="#" class="btn btn-light mb-5">Create Event</a></div>                
                     <div class="col-6 col-md-6"><a href="#" class="btn btn-light mb-5">My events</a></div>
+                    <select runat="server" id="SportName">
+
+                    </select>
                 </div>
              </div>
             <div class="col-md-4 col-12 text-right">
@@ -27,6 +31,18 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div style="width:80%; text-align:center">
+                <div class="alert alert-success" runat="server" id="successMessage" role="alert">
+                    <p style="text-align:center" runat="server" id="successPrint" class="card-text" ></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
     <div class="card" runat="server" id="card0">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
@@ -38,7 +54,7 @@
            <p runat="server" id="Description0" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button0" class="btn btn-primary" onserverclick="button0_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card1">
@@ -52,7 +68,7 @@
            <p runat="server" id="Description1" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button1" class="btn btn-primary" onserverclick="button1_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card2">
@@ -66,7 +82,7 @@
            <p runat="server" id="Description2" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button2" class="btn btn-primary" onserverclick="button2_ServerClick">I'm interested!</button>
         </div>  
     </div>
     <div class="card" runat="server" id="card3">
@@ -80,7 +96,7 @@
            <p runat="server" id="Description3" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button3"  class="btn btn-primary" onserverclick="button3_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card4">
@@ -94,7 +110,7 @@
            <p runat="server" id="Description4" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button4" class="btn btn-primary" onserverclick="button4_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card5">
@@ -108,7 +124,7 @@
            <p runat="server" id="Description5" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button5" class="btn btn-primary" onserverclick="button5_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card6">
@@ -122,7 +138,7 @@
            <p runat="server" id="Description6" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button6" class="btn btn-primary" onserverclick="button6_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card7">
@@ -136,7 +152,7 @@
            <p runat="server" id="Description7" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button7" class="btn btn-primary" onserverclick="button7_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card8">
@@ -150,7 +166,7 @@
            <p runat="server" id="Description8" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button8" class="btn btn-primary" onserverclick="button8_ServerClick">I'm interested!</button>
         </div>  
     </div>
      <div class="card" runat="server" id="card9">
@@ -164,7 +180,7 @@
            <p runat="server" id="Description9" class="card-text">Description</p>
 
 
-            <a href="#" class="btn btn-primary">I'm interested!</a>
+            <button runat="server" id="button9" class="btn btn-primary" onserverclick="button9_ServerClick">I'm interested!</button>
         </div>  
     </div>
         

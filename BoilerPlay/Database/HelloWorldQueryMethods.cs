@@ -69,6 +69,20 @@ namespace BoilerPlay.Database
         {
             Query.ExecuteNonReturnCommand(String.Format("DELETE FROM HelloWorld.Posts WHERE PostID = {0};", postID));
         }
+        public static void IncrementNumberOfAttendees(string PostID)
+        {
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT HelloWorld.Posts.NumberNeeded FROM HelloWorld.Posts WHERE HelloWorld.Posts.PostID = '{0}';", PostID));
+            int currentNumberNeeded = Convert.ToInt32(output.Rows[0].ItemArray[0].ToString());
+            currentNumberNeeded++;
+
+            string sqlStatement = String.Format("UPDATE HelloWorld.Posts " +
+                "SET " +
+                "HelloWorld.Posts.NumberNeeded = '{0}' " +
+                "WHERE " +
+                "HelloWorld.Posts.PostID = '{1}';", currentNumberNeeded, PostID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
         public static void CreatePostInDataBase(Posts postToAdd)
         {
             string dateTimeString = postToAdd.DateTime.ToString("yyyy-MM-dd hh:mm:ss") + ".000";//2018-09-08 17:51:04.000

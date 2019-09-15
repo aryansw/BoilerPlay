@@ -15,7 +15,7 @@ namespace BoilerPlay
         }
         protected void Register_ServerClick(object sender, EventArgs e)
         {
-            Database.Register.RegisterAccount(Name.ToString(), description.Value.ToString(), Password.Value.ToString(), email.Value.ToString(), phone.Value.ToString(), form..ToString());
+            //Database.Register.RegisterAccount(Name.ToString(), description.Value.ToString(), Password.Value.ToString(), email.Value.ToString(), phone.Value.ToString(), form.ToString());
         }
     }
 }

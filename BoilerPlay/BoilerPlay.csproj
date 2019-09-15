@@ -251,6 +251,7 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MainPageGlobals.cs" />
     <Compile Include="Personal_profile.aspx.cs">
       <DependentUpon>Personal_profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
