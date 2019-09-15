@@ -12,8 +12,15 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var abc = Cookies.ReadCookie(this.Request, this.Response);
-
+            string cookie = Cookies.ReadCookie(this.Request, this.Response);
+            if(String.IsNullOrWhiteSpace(cookie))
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+            else
+            {
+                Response.Redirect("MainPage.aspx");
+            }
             //var output = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM Accounts");
             //var x = HelloWorldQueryMethods.GetAllInvolvementsForAccount("00001");
 

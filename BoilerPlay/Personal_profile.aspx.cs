@@ -14,10 +14,14 @@ namespace BoilerPlay
         {
             Error_Flag.Visible = false;
             Success.Visible = false;
+            profileBtn.Enabled = false;
+
             if (!IsPostBack)
             {
-                Cookies.WriteCookie("10001", this.Response);
+                //Cookies.WriteCookie("10001", this.Response);
                 string x = Cookies.ReadCookie(this.Request, this.Response);
+                if (String.IsNullOrWhiteSpace(x))
+                    Response.Redirect("LoginPage.aspx");
                 acc = Database.HelloWorldQueryMethods.GetAccountFromCookie(this.Request, this.Response);
                 
 
@@ -103,6 +107,26 @@ namespace BoilerPlay
             Profile_Password1.Attributes.Add("readonly", "readonly");
             
             
+        }
+
+        protected void profileBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void myEventBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainPage.aspx?myEvents=true");
+        }
+
+        protected void allEventsBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainPage.aspx");
+        }
+
+        protected void createEventBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Create_Event.aspx");
         }
     }
 }

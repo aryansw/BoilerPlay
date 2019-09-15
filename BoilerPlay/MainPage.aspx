@@ -66,13 +66,13 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
-                                        <p>Start Time:<input type="time" min="00:00" max="23:59" id="TimeStartFilter" /></p>
+                                        <p>Start Time:<asp:TextBox runat="server" TextMode="Time" ID="TimeStartFilter" /></p>
                                         <asp:TextBox runat="server" ID="textBx" TextMode="Time"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
-                                        <p>End Time: <input type="time" min="00:00" max="23:59" id="TimeEndFilter" /></p>
+                                        <p>End Time: <asp:TextBox runat="server" TextMode="Time" ID="TimeEndFilter" /></p>
                                     </div>
                                 </div>
                                 <div class="col-12">

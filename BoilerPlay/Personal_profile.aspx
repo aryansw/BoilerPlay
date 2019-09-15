@@ -10,11 +10,21 @@
     <title></title>
 </head>
 <body>
-   <div class="container-fluid bg-dark text-white text-center">
-        <div class="row pt-5 pl-5 pr-5 ">
-            <div class="col-12 col-md-12 text-center pt-5 pl-5 pr-5">
-                 <h1 class="text-center">BoilerPlay</h1>
-            </div>
+    
+    <form runat="server">
+    <div class="container-fluid bg-dark text-white pt-5">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-5"></div>
+            <div class="col-md-4 col-12">
+                <h1 class="text-center">BoilerPlay</h1>
+                <p class="text-center">Find teammates anytime, anywhere!</p>
+                <div class="row text3center">
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="createEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="createEventBtn_Click" Text="Create Event" /></div>                 
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="allEventsBtn" style="font-size: 11.9px; font-weight: bold" OnClick="allEventsBtn_Click" Text="All Events" /></div>               
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="myEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="myEventBtn_Click" Text="My Events" /></div>
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="profileBtn" style="font-size: 11.9px; font-weight: bold" OnClick="profileBtn_Click" Text="Profile" /></div>
+                </div>                       
+             </div>
         </div>
     </div>
     <div class="container">
@@ -23,7 +33,7 @@
            <div class="col-md-10 col-10">
               <div class="card">
                 <div class="card-body">
-                    <form class="form-horizontal" id="Personal_profile_Form" role="form" runat="server">
+                    <form class="form-horizontal" role="form">
                         <div class="row">
                             <div class="col-4 col-md-4"></div>
                             <div class="col-4 col-md-4">
@@ -81,5 +91,6 @@
            </div>
        </div>
     </div>
+        </form>
 </body>
 </html>

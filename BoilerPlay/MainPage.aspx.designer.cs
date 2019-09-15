@@ -94,6 +94,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
+        /// TimeStartFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TimeStartFilter;
+        
+        /// <summary>
         /// textBx control.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace BoilerPlay {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textBx;
+        
+        /// <summary>
+        /// TimeEndFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TimeEndFilter;
         
         /// <summary>
         /// ProficiencyFilter control.

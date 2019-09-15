@@ -52,8 +52,9 @@ namespace BoilerPlay
             String profeciencyBox = ProficiencyFilter.Value;
             String genderBox = GenderFilter.Value;
             String dateBox = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
-            String timeBox1 = TimeStartFilter.Value; //accept as hh:mm (smaller)
-            String timeBox2 = TimeEndFilter.Value; //accept as hh:mm (bigger value)
+
+            String timeBox1 = TimeStartFilter.Text; //accept as hh:mm (smaller)
+            String timeBox2 = TimeEndFilter.Text; //accept as hh:mm (bigger value)
             
 
 
@@ -249,7 +250,7 @@ namespace BoilerPlay
         }
         protected void profileBtn_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Personal_profile.aspx");
         }
 
         protected void allEventsBtn_Click(object sender, EventArgs e)
