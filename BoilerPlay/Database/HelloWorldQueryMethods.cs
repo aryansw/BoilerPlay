@@ -120,7 +120,24 @@ namespace BoilerPlay.Database
             };
             return account;
         }
-
+        public static Posts GetPostsFromPostID(string post_id)
+        {
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Posts WHERE PostID = '{0}'", post_id));
+            Posts newpost = new Posts
+            {
+                PostID = output.Rows[0].ItemArray[0].ToString(),
+                Title = output.Rows[0].ItemArray[1].ToString(),
+                Posts_Name = output.Rows[0].ItemArray[2].ToString(),
+                DateTime = DateTime.Parse(output.Rows[0].ItemArray[3].ToString()),
+                Gender = output.Rows[0].ItemArray[4].ToString(),
+                Desc = output.Rows[0].ItemArray[5].ToString(),
+                Location = output.Rows[0].ItemArray[6].ToString(),
+                NumberNeeded = Convert.ToInt32(output.Rows[0].ItemArray[7].ToString()),
+                Proficiency = output.Rows[0].ItemArray[8].ToString()
+                
+            };
+            return newpost;
+        }
         public struct Account
         {
             public string ID;
