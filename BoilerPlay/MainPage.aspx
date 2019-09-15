@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="BoilerPlay.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" EnableEventValidation="false" Inherits="BoilerPlay.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -458,16 +458,16 @@
         <div class="row mt-3 mb-3 text-right">
             <div class="col-12 col-md-12">
                 <p>Next>> </p>
-                <button runat="server" id="PageButton0" class="btn btn-dark p-2">1</button>
-                <button runat="server" id="PageButton1" class="btn btn-dark p-2">2</button>
-                <button runat="server" id="PageButton2" class="btn btn-dark p-2">3</button>
-                <button runat="server" id="PageButton3" class="btn btn-dark p-2">4</button>
-                <button runat="server" id="PageButton4" class="btn btn-dark p-2">5</button>
-                <button runat="server" id="PageButton5" class="btn btn-dark p-2">6</button>
-                <button runat="server" id="PageButton6" class="btn btn-dark p-2">7</button>
-                <button runat="server" id="PageButton7" class="btn btn-dark p-2">8</button>
-                <button runat="server" id="PageButton8" class="btn btn-dark p-2">9</button>
-                <button runat="server" id="PageButton9" class="btn btn-dark p-2">10</button>
+                <button runat="server" id="PageButton0" onserverclick="PageButton0_ServerClick" class="btn btn-dark p-2">1</button>
+                <button runat="server" id="PageButton1" onserverclick="PageButton1_ServerClick" class="btn btn-dark p-2">2</button>
+                <button runat="server" id="PageButton2" onserverclick="PageButton2_ServerClick" class="btn btn-dark p-2">3</button>
+                <button runat="server" id="PageButton3" onserverclick="PageButton3_ServerClick" class="btn btn-dark p-2">4</button>
+                <button runat="server" id="PageButton4" onserverclick="PageButton4_ServerClick" class="btn btn-dark p-2">5</button>
+                <button runat="server" id="PageButton5" onserverclick="PageButton5_ServerClick" class="btn btn-dark p-2">6</button>
+                <button runat="server" id="PageButton6" onserverclick="PageButton6_ServerClick" class="btn btn-dark p-2">7</button>
+                <button runat="server" id="PageButton7" onserverclick="PageButton7_ServerClick" class="btn btn-dark p-2">8</button>
+                <button runat="server" id="PageButton8" onserverclick="PageButton8_ServerClick" class="btn btn-dark p-2">9</button>
+                <button runat="server" id="PageButton9" onserverclick="PageButton9_ServerClick" class="btn btn-dark p-2">10</button>
             </div>
         </div>
     </div>

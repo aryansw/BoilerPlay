@@ -65,11 +65,12 @@ namespace BoilerPlay
             string AccountID = Cookies.ReadCookie(this.Request, this.Response);
             string[] involvementsForAccount = HelloWorldQueryMethods.GetAllInvolvementsForAccount(AccountID);
 
-            int count = MainPageGlobals.Posts.Length;
-            if (count > 10)
+            int total = MainPageGlobals.Posts.Length;
+            int count = total;
+            if (total > 10)
                 count = 10;
             // ;
-            String xyz = MainPageGlobals.Posts[0].Posts_Name;
+           
             switch (count-1) {
                 case 9:
                     host_name9 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[9].Posts_Name;
@@ -535,6 +536,56 @@ namespace BoilerPlay
         protected void ClearCalendarBtn_Click(object sender, EventArgs e)
         {
             Calendar1.SelectedDates.Clear();
+        }
+
+        protected void PageButton0_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 0;
+        }
+
+        protected void PageButton1_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 1;
+        }
+
+        protected void PageButton2_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 2;
+        }
+
+        protected void PageButton3_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 3;
+        }
+
+        protected void PageButton4_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 4;
+        }
+
+        protected void PageButton5_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 5;
+        }
+
+        protected void PageButton6_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 6;
+        }
+
+        protected void PageButton7_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 7;
+        }
+
+        protected void PageButton8_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 8;
+        }
+
+        protected void PageButton9_ServerClick(object sender, EventArgs e)
+        {
+            MainPageGlobals.CurrentPage = 9;
         }
     }
 }
