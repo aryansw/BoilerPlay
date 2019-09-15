@@ -13,13 +13,49 @@ namespace BoilerPlay {
     public partial class Create_Event {
         
         /// <summary>
-        /// login_form control.
+        /// createEventBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm login_form;
+        protected global::System.Web.UI.WebControls.Button createEventBtn;
+        
+        /// <summary>
+        /// allEventsBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button allEventsBtn;
+        
+        /// <summary>
+        /// myEventBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button myEventBtn;
+        
+        /// <summary>
+        /// profileBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button profileBtn;
+        
+        /// <summary>
+        /// failedMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl failedMessage;
         
         /// <summary>
         /// SportName control.

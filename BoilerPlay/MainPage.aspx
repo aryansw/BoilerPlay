@@ -21,17 +21,13 @@
             <div class="col-md-4 col-12">
                 <h1 class="text-center">BoilerPlay</h1>
                 <p class="text-center">Find teammates anytime, anywhere!</p>
-                <div class="row text-center">
+                <div class="row text3center">
                     <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="createEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="createEventBtn_Click" Text="Create Event" /></div>                 
                     <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="allEventsBtn" style="font-size: 11.9px; font-weight: bold" OnClick="allEventsBtn_Click" Text="All Events" /></div>               
                     <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="myEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="myEventBtn_Click" Text="My Events" /></div>
                     <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="profileBtn" style="font-size: 11.9px; font-weight: bold" OnClick="profileBtn_Click" Text="Profile" /></div>
-                </div>
+                </div>                       
              </div>
-            <div class="col-md-4 col-12 text-right">
-                <a href="#"><img src="avatar_circle.png" width="20%" /></a>
-                    <p class="text-right"><a href="#">NAME</a></p>
-            </div>
         </div>
     </div>
     <div class="row">
@@ -61,7 +57,6 @@
                                     <div class="form-group">
                                         <label for="Sport">Sport:</label>
                                         <select runat="server" id="SportFilter">
-                                            <option>Basketball</option>
                                         </select>
                                     </div>
                                 </div>
@@ -113,7 +108,7 @@
 
               <div class="card pl-5" runat="server" id="card0">
                     <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle0"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint0" class="card-text">Date and Time</span></p>
@@ -131,7 +126,7 @@
                                 <p>Description: <span runat="server" id="Description0" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender0" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender0" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -142,7 +137,7 @@
                  </div>
                 <div class="card pl-5 mt-3" runat="server" id="card1">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle1"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint1" class="card-text">Date and Time</span></p>
@@ -160,7 +155,7 @@
                                 <p>Description: <span runat="server" id="Description1" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender1" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender1" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -172,7 +167,7 @@
 
                 <div class="card pl-5 mt-3" runat="server" id="card2">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle2"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint2" class="card-text">Date and Time</span></p>
@@ -190,7 +185,7 @@
                                 <p>Description: <span runat="server" id="Description2" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender2" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender2" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -201,7 +196,7 @@
                     </div>
                 <div class="card pl-5 mt-3" runat="server" id="card3">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle3"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint3" class="card-text">Date and Time</span></p>
@@ -219,7 +214,7 @@
                                 <p>Description: <span runat="server" id="Description3" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender3" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender3" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -230,7 +225,7 @@
                 </div>
                 <div class="card pl-5 mt-3" runat="server" id="card4">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle4"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint4" class="card-text">Date and Time</span></p>
@@ -248,7 +243,7 @@
                                 <p>Description: <span runat="server" id="Description4" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender4" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender4" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -259,7 +254,7 @@
                 </div>
                 <div class="card pl-5 mt-3" runat="server" id="card5">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle5"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint5" class="card-text">Date and Time</span></p>
@@ -277,7 +272,7 @@
                                 <p>Description: <span runat="server" id="Description5" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender5" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender5" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -288,7 +283,7 @@
                 </div>
                 <div class="card pl-5 mt-3" runat="server" id="card6">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle6"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint6" class="card-text">Date and Time</span></p>
@@ -306,7 +301,7 @@
                                 <p>Description: <span runat="server" id="Description6" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender6" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender6" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -317,7 +312,7 @@
                 </div>
                 <div class="card pl-5 mt-3" runat="server" id="card7">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle7"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint7" class="card-text">Date and Time</span></p>
@@ -335,7 +330,7 @@
                                 <p>Description: <span runat="server" id="Description7" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender7" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender7" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -346,7 +341,7 @@
                 </div>
                 <div class="card pl-5 mt-3" runat="server" id="card8">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle8"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint8" class="card-text">Date and Time</span></p>
@@ -364,7 +359,7 @@
                                 <p>Description: <span runat="server" id="Description8" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender8" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender8" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
@@ -375,7 +370,7 @@
                    </div>
                 <div class="card pl-5 mt-3" runat="server" id="card9">
                   <div class="card-body">
-                       <h4 class="card-title"><b>Sport name</b></h4>
+                       <h4 class="card-title" runat="server" id="CardTitle9"><b>Sport name</b></h4>
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint9" class="card-text">Date and Time</span></p>
@@ -393,7 +388,7 @@
                                 <p>Description: <span runat="server" id="Description9" class="card-text">Description</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>Gender: <span runat="server" id="Gender9" class="card-text">Gender:</span></p>
+                                <p><span runat="server" id="Gender9" class="card-text">Gender:</span></p>
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">

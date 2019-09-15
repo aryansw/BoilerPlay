@@ -30,19 +30,22 @@ namespace BoilerPlay.Database
         }
         public static class Posts_Sports
         {
-            public static readonly Dictionary<string, string> Sports = new Dictionary<string, string>();
-            public static readonly string Table_Tennis = "Table Tennis";
+            public static readonly string TableTennis = "Table Tennis";
             public static readonly string Tennis = "Tennis";
-            public static readonly string Football = "Football";
             public static readonly string Cricket = "Cricket";
+            public static readonly string Football = "Football";
             public static readonly string Basketball = "Basketball";
+            public static readonly string Baseball = "Baseball";
+            public static readonly string Softball = "Softball";
             public static readonly string Pool = "Pool";
-            public static readonly string Air_Hockey = "Air_Hockey";
+            public static readonly string Run = "Run";
+            public static readonly string Soccer = "Soccer";
+            public static readonly string Air_Hockey = "Air Hockey";
             public static readonly string Cardgames = "Cardgames";
 
             public static string[] SportsCombinations =
             {
-                Table_Tennis,Tennis,Football,Cricket,Basketball,Pool,Air_Hockey,Cardgames
+                TableTennis,Tennis,Cricket,Football,Basketball,Baseball, Softball, Pool, Run, Soccer, Air_Hockey,Cardgames
 
             };
         }

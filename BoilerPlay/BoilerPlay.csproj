@@ -27,7 +27,6 @@
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.5</TypeScriptToolsVersion>
   </PropertyGroup>
-  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -134,6 +133,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Create_Event.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -222,6 +222,13 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cookies.cs" />
+    <Compile Include="Create_Event.aspx.cs">
+      <DependentUpon>Create_Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Event.aspx.designer.cs">
+      <DependentUpon>Create_Event.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Database\DatabaseOptions.cs" />
     <Compile Include="Database\HelloWorldQueryMethods.cs" />
     <Compile Include="Database\LoginCheck.cs" />

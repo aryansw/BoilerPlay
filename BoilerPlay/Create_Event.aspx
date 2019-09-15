@@ -7,15 +7,36 @@
     <title>Event</title>
 </head>
 <body>
+    <form runat="server">
+    
+    <div class="container-fluid bg-dark text-white pt-5">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-5"></div>
+            <div class="col-md-4 col-12">
+                <h1 class="text-center">BoilerPlay</h1>
+                <p class="text-center">Find teammates anytime, anywhere!</p>
+                <div class="row text-center">
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="createEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="createEventBtn_Click" Text="Create Event" /></div>                 
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="allEventsBtn" style="font-size: 11.9px; font-weight: bold" OnClick="allEventsBtn_Click" Text="All Events" /></div>               
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="myEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="myEventBtn_Click" Text="My Events" /></div>
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="profileBtn" style="font-size: 11.9px; font-weight: bold" OnClick="profileBtn_Click" Text="Profile" /></div>
+                </div>
+             </div>
+        </div>
+    </div>
 
-    <div class="container-fluid bg-dark text-white text-center">
-        <div class="row pt-5 pl-5 pr-5 ">
-            <div class="col-12 col-md-12 text-center pt-5 pl-5 pr-5">
-                 <h1 class="text-center">BoilerPlay</h1>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div style="width:80%; text-align:center">
+                <div class="alert alert-danger" runat="server" id="failedMessage" role="alert">
+
+                </div>
             </div>
         </div>
     </div>
-    <form class="form-horizontal mt-5" id="login_form" role="form" runat="server">
+
+    <form class="form-horizontal mt-5" role="form">
         <div class="container text-center">
         <div class="row">
             <div class="col-md-3 col-3"></div>
@@ -24,7 +45,6 @@
                     <div class="form-group">
                     <label for="SportName" runat="server" class="dropdown-item-text" >Sport Name</label>
                       <select runat="server"  id="SportName">
-                        <option>Basketball</option>
                       </select>
                  </div>
                  </div>
@@ -82,11 +102,11 @@
                 <p class="m-3 ml-n5 mr-5">Time: <input type="time" min="00:00" max="23:59" id="appt" runat="server" name="time"></p>
             </div>
             <div class="form-group text-center">
-                    <!-- <input id="Login" name="submit" type="submit" value="LOGIN" class="btn btn-dark"> -->
-                    <button class="btn btn-dark" id="CreateEve" runat="server" onServerClick="CreateEve_ServerClick">LOGIN</button>
+                    <button class="btn btn-dark" id="CreateEve" runat="server" onServerClick="CreateEve_ServerClick">Create Post</button>
             </div>
         </div>
         </div>
     </form>
+        </form>
 </body>
 </html>

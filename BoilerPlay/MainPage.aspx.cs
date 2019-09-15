@@ -25,11 +25,23 @@ namespace BoilerPlay
             successMessage.Visible = false;
             allEventsBtn.Enabled = false;
 
+            foreach(var sport in Database.DatabaseOptions.Posts_Sports.SportsCombinations)
+                SportFilter.Items.Add(sport);
             //Cookies.ReadCookie(this.Request,this.Response);
 
             if (!IsPostBack)
             {
-                SetCards();
+                if (!string.IsNullOrEmpty(Request.QueryString["myEvents"]))
+                {
+                   if(Request.QueryString["myEvents"] == "true")
+                   {
+                        myEventBtn_Click(new object(), EventArgs.Empty);
+                   }
+                    else
+                        SetCards();
+                }
+                else
+                    SetCards();
             }
 
 
@@ -105,11 +117,13 @@ namespace BoilerPlay
                 else
                     peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
 
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("MM/dd/yyyy hh:mm tt");
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[x].Desc;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[x].Gender;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[x].Title;
 
                 //UpdateMainPageGlobals
                 if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
@@ -126,8 +140,8 @@ namespace BoilerPlay
         }
         private void SetSuccessMessage()
         {
-            //successMessage.Visible = true;
-            //successPrint.InnerText = "You have been successfully added to the event";
+            successMessage.Visible = true;
+            successPrint.InnerText = "You have been successfully added to the event";
         }
         protected void button0_ServerClick(object sender, EventArgs e)
         {
@@ -210,7 +224,7 @@ namespace BoilerPlay
 
         protected void createEventBtn_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Create_Event");
         }
         protected void myEventBtn_Click(object sender, EventArgs e)
         {
@@ -246,6 +260,12 @@ namespace BoilerPlay
             myEventBtn.Enabled = true;
 
             SetCards();
+        }
+
+        protected void logOutBtn_Click(object sender, EventArgs e)
+        {
+            Cookies.DeleteCookie(this.Request, this.Response);
+            Response.Redirect("LoginPage.aspx");
         }
     }
 }

@@ -151,7 +151,7 @@ namespace BoilerPlay.Database
 
             Query.ExecuteNonReturnCommand(sqlStatement);
         }
-        public static void CreatePostInDataBase(Posts postToAdd)
+        public static string CreatePostInDataBase(Posts postToAdd)
         {
             string dateTimeString = postToAdd.DateTime.ToString("yyyy-MM-dd hh:mm:ss") + ".000";//2018-09-08 17:51:04.000
 
@@ -159,15 +159,17 @@ namespace BoilerPlay.Database
             Query.ExecuteNonReturnCommand(String.Format("INSERT INTO {0}({0}.PostID, {0}.Title, {0}.Host_Name, {0}.DateTime, {0}.Gender, {0}.Desc, {0}.Location, {0}.NumberNeeded, {0}.Proficiency) " +
                 "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}');",
                 "HelloWorld.Posts",
-                newPostID, 
+                newPostID,
                 postToAdd.Title,
                 postToAdd.Posts_Name,
-                dateTimeString, 
-                postToAdd.Gender, 
-                postToAdd.Desc, 
+                dateTimeString,
+                postToAdd.Gender,
+                postToAdd.Desc,
                 postToAdd.Location,
                 postToAdd.NumberNeeded,
                 postToAdd.Proficiency));
+
+            return newPostID.ToString();
         }
         public static int GenerateNewPostID()
         {
