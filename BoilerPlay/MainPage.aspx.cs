@@ -15,20 +15,30 @@ namespace BoilerPlay
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public string host_name0;
+        public string host_name1;
+        public string host_name2;
+        public string host_name3;
+        public string host_name4;
+        public string host_name5;
+        public string host_name6;
+        public string host_name7;
+        public string host_name8;
+        public string host_name9;
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
             if(String.IsNullOrWhiteSpace(Cookies.ReadCookie(this.Request, this.Response)))
             {
                 Response.Redirect("LoginPage.aspx");
             }
-            // This is a Cookie DO NOT DELETE MONAL+
+            // This is a Cookie DO NOT DELETE MONAL
+            //Cookies.ReadCookie(this.Request,this.Response);
             successMessage.Visible = false;
             allEventsBtn.Enabled = false;
 
             foreach(var sport in Database.DatabaseOptions.Posts_Sports.SportsCombinations)
                 SportFilter.Items.Add(sport);
-            //Cookies.ReadCookie(this.Request,this.Response);
-
+            
             if (!IsPostBack)
             {
                 if (!string.IsNullOrEmpty(Request.QueryString["myEvents"]))
@@ -79,7 +89,7 @@ namespace BoilerPlay
         }
         private void SetCards(int index = -1)
         {
-            if(index == -1)
+            if (index == -1)
                 MainPageGlobals.Posts = HelloWorldQueryMethods.GetAllPosts();
 
             string AccountID = Cookies.ReadCookie(this.Request, this.Response);
@@ -88,7 +98,87 @@ namespace BoilerPlay
             int count = MainPageGlobals.Posts.Length;
             if (count > 10)
                 count = 10;
-
+            // ;
+            String xyz = MainPageGlobals.Posts[0].Posts_Name;
+            switch (count-1) {
+                case 9:
+                    host_name9 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[9].Posts_Name;
+                    host_name8 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[8].Posts_Name;
+                    host_name7 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[7].Posts_Name;
+                    host_name6 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[6].Posts_Name;
+                    host_name5 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[5].Posts_Name;
+                    host_name4 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[4].Posts_Name;
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 8:
+                    host_name8 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[8].Posts_Name;
+                    host_name7 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[7].Posts_Name;
+                    host_name6 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[6].Posts_Name;
+                    host_name5 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[5].Posts_Name;
+                    host_name4 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[4].Posts_Name;
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 7:
+                    host_name7 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[7].Posts_Name;
+                    host_name6 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[6].Posts_Name;
+                    host_name5 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[5].Posts_Name;
+                    host_name4 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[4].Posts_Name;
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 6:
+                    host_name6 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[6].Posts_Name;
+                    host_name5 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[5].Posts_Name;
+                    host_name4 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[4].Posts_Name;
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 5:
+                    host_name5 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[5].Posts_Name;
+                    host_name4 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[4].Posts_Name;
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 4:
+                    host_name4 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[4].Posts_Name;
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 3:
+                    host_name3 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[3].Posts_Name;
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 2:
+                    host_name2 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[2].Posts_Name;
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 1:
+                    host_name1 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[1].Posts_Name;
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                case 0:
+                    host_name0 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[0].Posts_Name;
+                    break;
+                default:
+                    break;
+            }
             for (int x = 0; x < 10; x++)
             {
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
@@ -116,6 +206,7 @@ namespace BoilerPlay
                 else
                     peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
 
+                
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("MM/dd/yyyy hh:mm tt");
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;

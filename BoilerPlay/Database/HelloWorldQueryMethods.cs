@@ -204,6 +204,24 @@ namespace BoilerPlay.Database
             };
             return account;
         }
+
+        public static Account GetAccountFromID(String Id)
+        {
+            string cookieValue = Id;
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Accounts WHERE ID = '{0}'", cookieValue));
+            Account account = new Account
+            {
+                ID = output.Rows[0].ItemArray[0].ToString(),
+                Name = output.Rows[0].ItemArray[1].ToString(),
+                Year = Convert.ToInt32(output.Rows[0].ItemArray[2].ToString()),
+                Desc = output.Rows[0].ItemArray[3].ToString(),
+                Password = output.Rows[0].ItemArray[4].ToString(),
+                Email = output.Rows[0].ItemArray[5].ToString(),
+                Phone = output.Rows[0].ItemArray[6].ToString()
+            };
+            return account;
+        }
+
         public static Posts GetPostsFromPostID(string post_id)
         {
             var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Posts WHERE PostID = '{0}'", post_id));
