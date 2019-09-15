@@ -16,12 +16,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-header container-fluid bg-dark text-white">
-                        <h2 class="text-center">Profile</h2>
+                        <h2 class="text-center" id="name" runat="server">Profile</h2>
                     </div>
                     <form class="form-horizontal" id="registration_form" role="form" runat="server">
-                        <div class="form-group m-3">
-                            <p>Name: <input type="text" class="form-control bg-light"  runat="server" id="Name" name="name" placeholder="Name" value="" disabled="disabled"/></p>
-                        </div>
                         <div class="form-group m-3">
                             <p>Email: <input type="email" class="form-control bg-light" runat="server" id="email" name="email" placeholder="Email ID" value="" disabled="disabled"/></p>
                         </div>
