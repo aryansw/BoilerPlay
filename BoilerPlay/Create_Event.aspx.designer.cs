@@ -28,8 +28,10 @@ namespace BoilerPlay {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SportName;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SportName;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Proficiency;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Gender;
+
         /// <summary>
         /// ReqPeople control.
         /// </summary>
