@@ -2,12 +2,12 @@
 
 <!DOCTYPE html>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <head runat="server">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>BoilerPlay</title>
 </head>
 <body>
@@ -425,6 +425,24 @@
     </div>
     
     </form>
+
+    <div class="container">
+        <div class="row mt-3 mb-3 text-right">
+            <div class="col-12 col-md-12">
+                <p>Next>> </p>
+                <button runat="server" id="PageButton0" class="btn btn-dark p-2">1</button>
+                <button runat="server" id="PageButton1" class="btn btn-dark p-2">2</button>
+                <button runat="server" id="PageButton2" class="btn btn-dark p-2">3</button>
+                <button runat="server" id="PageButton3" class="btn btn-dark p-2">4</button>
+                <button runat="server" id="PageButton4" class="btn btn-dark p-2">5</button>
+                <button runat="server" id="PageButton5" class="btn btn-dark p-2">6</button>
+                <button runat="server" id="PageButton6" class="btn btn-dark p-2">7</button>
+                <button runat="server" id="PageButton7" class="btn btn-dark p-2">8</button>
+                <button runat="server" id="PageButton8" class="btn btn-dark p-2">9</button>
+                <button runat="server" id="PageButton9" class="btn btn-dark p-2">10</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

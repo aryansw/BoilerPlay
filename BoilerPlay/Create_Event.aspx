@@ -101,10 +101,11 @@
                         <p> <asp:Calendar ID="Calendar" runat="server"></asp:Calendar></p>
                      </div>
                 </div>
-                <p class="m-3 ml-n5 mr-5">Time: <input type="time" min="00:00" max="23:59" id="appt" runat="server" name="time"></p>
-            </div>
+                <p class="mt-3 mb-3 ml-n3 mr-4">Time: <input type="time" min="00:00" max="23:59" id="appt" runat="server" name="time"></p>
+            
             <div class="form-group text-center">
                  <button class="btn btn-dark" id="CreateEve" runat="server" onServerClick="CreateEve_ServerClick">Create Post</button>
+            </div>
             </div>
         </div>
         </div>
