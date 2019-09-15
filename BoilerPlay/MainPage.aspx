@@ -19,18 +19,16 @@
                 <h1 class="text-center">BoilerPlay</h1>
                 <p class="text-center">Find teammates anytime, anywhere!</p>
                 <div class="row text-center">
-                    <div class="col-6 col-md-6"><a href="#" class="btn btn-light mb-5">Create Event</a></div>                
-                    <div class="col-6 col-md-6"><a href="#" class="btn btn-light mb-5">My events</a></div>
+                    <div class="col-4 col-md-4"><a href="#" class="btn btn-light mb-5" style="font-size: 11.9px"><b>Create Event</b></a></div>                
+                    <div class="col-4 col-md-4"><a href="#" class="btn btn-light mb-5" style="font-size: 11.9px"><b>My events</b></a></div>
+                    <div class="col-4 col-md-4"><a href="#" class="btn btn-light mb-5" style="font-size: 11.9px"><b>My Profile</b></a></div>
                 </div>
              </div>
-            <div class="col-md-4 col-12 text-right">
-                <a href="#"><img src="avatar_circle.png" width="20%" /></a>
-                    <p class="text-right"><a href="#">NAME</a></p>
-            </div>
+            
         </div>
     </div>
   
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <div class="row">
             <div class="col-md-3">
                 <div class="card p-3">
@@ -354,7 +352,7 @@
                         <div class="row">
                             <div class="col-md-6 col-6">
                                    <p>Date and Time: <span runat="server" id="DatePrint9" class="card-text">Date and Time</span></p>
-                               </div>
+                            </div>
                             <div class="col-md-6 col-6">
                                 <p>Location: <span runat="server" id="Location9" class="card-text">Location</span></p>
                             </div>
@@ -379,6 +377,12 @@
                 </div>
               </div>
            </div>
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <a href="#" class="btn btn-light mb-5" class="text-left"><b>Next Page</b></a>
+        </div>
+    </div>
+        
         </div>
     
     

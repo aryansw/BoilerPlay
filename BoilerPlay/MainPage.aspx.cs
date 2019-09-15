@@ -28,11 +28,11 @@ namespace BoilerPlay
             
             for(int x = 0; x < 10; x++)
             {
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+                //((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
             }
             for (int x = 0; x < count; x++)
             {
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
+                //((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
 
                 string peopleText = String.Format("People Commited {0}/{1}", allPosts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(allPosts[x].PostID));
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = allPosts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
