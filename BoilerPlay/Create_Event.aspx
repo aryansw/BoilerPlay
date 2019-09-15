@@ -32,7 +32,7 @@
             <div class="col-md-2 col-10">
                 <div class="form-group">
                     <label for="Proficiency" class="dropdown-item-text">Proficiency:</label>
-                      <select runat="server" id="SportName">
+                      <select runat="server" id="proficiency">
                         <option>Beginner</option>
                         <option>Amateur</option>
                         <option>Skilled</option>
