@@ -10,7 +10,7 @@
 namespace BoilerPlay {
     
     
-    public partial class Personal_profile {
+    public partial class Create_Event {
         
         /// <summary>
         /// login_form control.
@@ -28,7 +28,25 @@ namespace BoilerPlay {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SportName;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SportName;
+        
+        /// <summary>
+        /// proficiency control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect proficiency;
+        
+        /// <summary>
+        /// Gender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Gender;
         
         /// <summary>
         /// ReqPeople control.

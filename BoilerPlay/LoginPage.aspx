@@ -17,10 +17,15 @@
                     </div>
                     <form class="form-horizontal" id="login_form" role="form" runat="server">
                         <div class="form-group m-5">
-                            <input type="email" class="form-control bg-light" runat="server" id="email" name="email" placeholder="Email id" value="" required>
+                            <input type="email" class="form-control bg-light" runat="server" id="email" name="email" placeholder="Email ID" value="" required>
                         </div>
                         <div class="form-group m-5">
                             <input type="password" class="form-control bg-light" runat="server" id="Password" placeholder="Password" required>
+                        </div>
+                        <div style ="width:100%" class="text-center pb-n2">
+                            <div class ="alert alert-danger text-center px-5 mx-5 pb-n2" runat="server" role="alert" id="Error_Flag" >
+                                <p class="pb-n2">Incorrect Password</p>
+                            </div>
                         </div>
                         <div class="form-group text-center">
                            <!-- <input id="Login" name="submit" type="submit" value="LOGIN" class="btn btn-dark"> -->

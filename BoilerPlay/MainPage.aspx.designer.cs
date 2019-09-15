@@ -13,40 +13,49 @@ namespace BoilerPlay {
     public partial class WebForm1 {
         
         /// <summary>
-        /// SportName control.
+        /// SportFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect SportName;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SportFilter;
         
         /// <summary>
-        /// successMessage control.
+        /// CalendarFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlForm CalendarFilter;
         
         /// <summary>
-        /// successPrint control.
+        /// Calendar1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successPrint;
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
-        /// card0 control.
+        /// ProficiencyFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card0;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ProficiencyFilter;
+        
+        /// <summary>
+        /// GenderFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect GenderFilter;
         
         /// <summary>
         /// DatePrint0 control.
@@ -94,22 +103,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description0;
         
         /// <summary>
-        /// button0 control.
+        /// Gender0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button0;
-        
-        /// <summary>
-        /// card1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender0;
         
         /// <summary>
         /// DatePrint1 control.
@@ -157,22 +157,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description1;
         
         /// <summary>
-        /// button1 control.
+        /// Gender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button1;
-        
-        /// <summary>
-        /// card2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender1;
         
         /// <summary>
         /// DatePrint2 control.
@@ -220,22 +211,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description2;
         
         /// <summary>
-        /// button2 control.
+        /// Gender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button2;
-        
-        /// <summary>
-        /// card3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender2;
         
         /// <summary>
         /// DatePrint3 control.
@@ -283,22 +265,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description3;
         
         /// <summary>
-        /// button3 control.
+        /// Gender3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button3;
-        
-        /// <summary>
-        /// card4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card4;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender3;
         
         /// <summary>
         /// DatePrint4 control.
@@ -346,22 +319,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description4;
         
         /// <summary>
-        /// button4 control.
+        /// Gender4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button4;
-        
-        /// <summary>
-        /// card5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card5;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender4;
         
         /// <summary>
         /// DatePrint5 control.
@@ -409,22 +373,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description5;
         
         /// <summary>
-        /// button5 control.
+        /// Gender5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button5;
-        
-        /// <summary>
-        /// card6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card6;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender5;
         
         /// <summary>
         /// DatePrint6 control.
@@ -472,22 +427,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description6;
         
         /// <summary>
-        /// button6 control.
+        /// Gender6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button6;
-        
-        /// <summary>
-        /// card7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card7;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender6;
         
         /// <summary>
         /// DatePrint7 control.
@@ -535,22 +481,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description7;
         
         /// <summary>
-        /// button7 control.
+        /// Gender7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button7;
-        
-        /// <summary>
-        /// card8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card8;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender7;
         
         /// <summary>
         /// DatePrint8 control.
@@ -598,22 +535,13 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description8;
         
         /// <summary>
-        /// button8 control.
+        /// Gender8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button8;
-        
-        /// <summary>
-        /// card9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card9;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender8;
         
         /// <summary>
         /// DatePrint9 control.
@@ -661,21 +589,12 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Description9;
         
         /// <summary>
-        /// button9 control.
+        /// Gender9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton button9;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gender9;
     }
 }

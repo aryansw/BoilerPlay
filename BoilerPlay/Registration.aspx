@@ -27,16 +27,21 @@
                         </div>
                         <div class="form-group m-3" id="form" runat="server">
                             <h4>Year:</h4>
-                            <label class="radio-inline mx-3" id ="form1"><input type="radio" name="optradio" checked>Freshman</label>
-                            <label class="radio-inline mx-3" id ="form2"><input type="radio" name="optradio">Sophomore</label>
-                            <label class="radio-inline mx-3" id ="form3"><input type="radio" name="optradio">Junior</label>
-                            <label class="radio-inline mx-3" id ="form4"><input type="radio" name="optradio">Senior</label>
+                            <label class="radio-inline mx-3" ><input type="radio" runat="server" id ="form1" name="optradio" checked>Freshman</label>
+                            <label class="radio-inline mx-3" ><input type="radio" runat="server" id ="form2" name="optradio">Sophomore</label>
+                            <label class="radio-inline mx-3" ><input type="radio" runat="server" id ="form3" name="optradio">Junior</label>
+                            <label class="radio-inline mx-3" ><input type="radio" runat="server" id ="form4" name="optradio">Senior</label>
                         </div>
                         <div class="form-group m-3">
                             <input type="password" class="form-control bg-light" runat="server" id="Password" placeholder="Password">
                         </div>
                         <div class="form-group m-3">
                             <input type="password" class="form-control bg-light" runat="server" id="Password1" placeholder="Re-enter Password">
+                        </div>
+                        <div style ="width:100%" class="text-center pb-n2">
+                            <div class ="alert alert-danger text-center px-5 mx-5 pb-n2" runat="server" role="alert" id="Error_Flag" >
+                                <p class="pb-n2">Passwords do not match</p>
+                            </div>
                         </div>
                         <div class="form-group m-3">
                             <input type="text" id="description" name="description" runat="server" class="form-control bg-light" placeholder="Description (Fun Facts/Interests)">
