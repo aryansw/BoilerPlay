@@ -66,11 +66,12 @@ namespace BoilerPlay
             }
             for (int x = 0; x < count; x++)
             {
+                int postCounter = (MainPageGlobals.CurrentPage * 10) + x;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
 
                 string peopleText;
-                int totalNumberOfPeopleNeeded = MainPageGlobals.Posts[x].NumberNeeded;
-                int currentNumber = HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID);
+                int totalNumberOfPeopleNeeded = MainPageGlobals.Posts[postCounter].NumberNeeded;
+                int currentNumber = HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[postCounter].PostID);
                 if (index == x)
                 {
                     peopleText = String.Format("People Commited: {0}/{1}", currentNumber + 1, totalNumberOfPeopleNeeded);
@@ -78,7 +79,7 @@ namespace BoilerPlay
                     {
                         AccountsID = AccountID,
                         IsHost = false,
-                        Posts_PostID = MainPageGlobals.Posts[x].PostID
+                        Posts_PostID = MainPageGlobals.Posts[postCounter].PostID
                     };
                     HelloWorldQueryMethods.InsertInvolvement(involvement);
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
@@ -88,13 +89,13 @@ namespace BoilerPlay
                 else
                     peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
 
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("MM/dd/yyyy hh:mm tt");
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[postCounter].DateTime.ToString("MM/dd/yyyy hh:mm tt");
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[postCounter].Location;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[postCounter].Proficiency;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[x].Desc;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[x].Gender;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[x].Title;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[postCounter].Desc;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[postCounter].Gender;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[postCounter].Title;
 
                 //UpdateMainPageGlobals
                 if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
@@ -361,18 +362,38 @@ namespace BoilerPlay
                     {
                         if (String.IsNullOrWhiteSpace(timeBox2) != true && String.IsNullOrWhiteSpace(timeBox1) != true)
                         {
-                            if ((Int32.Parse(timeBox2.Substring(0, 2)) >= (Int32.Parse((dates[i].Substring(11, 13))))))
+                            string endSub = dates[i].Substring(11, 2);
+                            if (Int32.Parse(timeBox2.Substring(0, 2)) >= Int32.Parse(endSub))
                             {
-                                if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))))
+                                if ((Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 2))))))
                                 {
-                                    if (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15)))))
+                                    if (Int32.Parse(timeBox2.Substring(3, 2)) >= (Int32.Parse((dates[i].Substring(14, 2)))))
                                     {
-                                        if ((Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
+                                        if ((Int32.Parse(timeBox1.Substring(3, 2)) <= (Int32.Parse((dates[i].Substring(14, 2))))))
+                                        {
+                                        }
+                                        else
                                         {
                                             tempValues.Rows.RemoveAt(i);
+                                            numberRemoved++;
                                         }
                                     }
+                                    else
+                                    {
+                                        tempValues.Rows.RemoveAt(i);
+                                        numberRemoved++;
+                                    }
                                 }
+                                else
+                                {
+                                    tempValues.Rows.RemoveAt(i);
+                                    numberRemoved++;
+                                }
+                            }
+                            else
+                            {
+                                tempValues.Rows.RemoveAt(i);
+                                numberRemoved++;
                             }
                         }
                     }
