@@ -9,6 +9,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using BoilerPlay.Database;
 using System.Web.Services;
+using System.Threading.Tasks;
 
 namespace BoilerPlay
 {
@@ -60,9 +61,13 @@ namespace BoilerPlay
             }
             */
         }
-        private void SetCards()
+        private void SetCards(int index = -1)
         {
-            MainPageGlobals.Posts = HelloWorldQueryMethods.GetAllPosts();
+            if(index == -1)
+                MainPageGlobals.Posts = HelloWorldQueryMethods.GetAllPosts();
+
+            string AccountID = Cookies.ReadCookie(this.Request, this.Response);
+            string[] involvementsForAccount = HelloWorldQueryMethods.GetAllInvolvementsForAccount(AccountID);
 
             int count = MainPageGlobals.Posts.Length;
             if (count > 10)
@@ -76,33 +81,53 @@ namespace BoilerPlay
             {
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
 
-                string peopleText = String.Format("People Commited {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
+                string peopleText = String.Empty;
+                if (index == x)
+                {
+                    peopleText = String.Format("People Commited: {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded + 1, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
+                    HelloWorldQueryMethods.Involvement involvement = new HelloWorldQueryMethods.Involvement
+                    {
+                        AccountsID = AccountID,
+                        IsHost = false,
+                        Posts_PostID = MainPageGlobals.Posts[x].PostID
+                    };
+                    HelloWorldQueryMethods.InsertInvolvement(involvement);
+                }
+                else
+                    peopleText = String.Format("People Commited: {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
+
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[x].Desc;
-            }
 
+                if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
+                {
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Already Joined";
+                }
+            }
         }
         private void SetSuccessMessage()
         {
 
-            successMessage.Visible = true;
-            successPrint.InnerText = "You have been successfully added to the event";
+            //successMessage.Visible = true;
+            //successPrint.InnerText = "You have been successfully added to the event";
         }
         protected void button0_ServerClick(object sender, EventArgs e)
         {
+            button0.Disabled = true;
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 0].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(0);
             SetSuccessMessage();
         }
         protected void button1_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 1].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(1);
             SetSuccessMessage();
         }
 
@@ -110,7 +135,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 2].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(2);
             SetSuccessMessage();
         }
 
@@ -118,7 +143,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 3].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(3);
             SetSuccessMessage();
         }
 
@@ -126,7 +151,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 4].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(4);
             SetSuccessMessage();
         }
 
@@ -134,7 +159,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 5].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(5);
             SetSuccessMessage();
         }
 
@@ -142,7 +167,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 6].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(6);
             SetSuccessMessage();
         }
 
@@ -150,7 +175,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 7].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(7);
             SetSuccessMessage();
         }
 
@@ -158,7 +183,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 8].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(8);
             SetSuccessMessage();
         }
 
@@ -166,7 +191,7 @@ namespace BoilerPlay
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 9].PostID;
             HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
-            SetCards();
+            SetCards(9);
             SetSuccessMessage();
         }
     }

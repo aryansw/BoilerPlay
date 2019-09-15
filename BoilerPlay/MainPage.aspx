@@ -1,18 +1,21 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="BoilerPlay.WebForm1" %>
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <head runat="server">
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BoilerPlay</title>
 </head>
 <body>
+    
+        
+    <form id="form1" runat="server">
 
-   
-    <div class="container-fluid bg-dark text-white pt-5 ">
+    <div class="container-fluid bg-dark text-white pt-5">
         <div class="row mb-5">
             <div class="col-md-4 mb-5"></div>
             <div class="col-md-4 col-12">
@@ -29,7 +32,21 @@
             </div>
         </div>
     </div>
-  
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div style="width:80%; text-align:center">
+                <div class="alert alert-success" runat="server" id="successMessage" role="alert">
+                    <p style="text-align:center" runat="server" id="successPrint" class="card-text" ></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -48,7 +65,7 @@
                                 </div>
                                 <div class="col-12">
                                     <p>Date:</p>
-                                        <form runat="server" id="CalendarFilter"><asp:Calendar ID="Calendar1" runat="server"></asp:Calendar></form>
+                                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
@@ -57,7 +74,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
-                                        <p>End Time: <input type="time" min="00:00" max="23:59" id="TimeStartFilter" /></p>
+                                        <p>End Time: <input type="time" min="00:00" max="23:59" id="TimeEndFilter" /></p>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -85,20 +102,13 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <div style="width:80%; text-align:center">
-                        <div class="alert alert-success" runat="server" id="successMessage" role="alert">
-                            <p style="text-align:center" runat="server" id="successPrint" class="card-text" ></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
+            </div> 
+            
+            
             <div class="col-md-8 container-fluid">
-              <div class="card pl-5">
+
+
+              <div class="card pl-5" runat="server" id="card0">
                     <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -112,7 +122,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency0" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People0" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People0" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description0" class="card-text">Description</span></p>
@@ -122,12 +132,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button0" class="btn btn-primary" onserverclick="button0_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button0" class="btn btn-dark" onserverclick="button0_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div>
-                  </div>
-                <div class="card pl-5 mt-3">
+                 </div>
+                <div class="card pl-5 mt-3" runat="server" id="card1">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -141,7 +151,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency1" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People1" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People1" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description1" class="card-text">Description</span></p>
@@ -151,12 +161,13 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button1" class="btn btn-primary" onserverclick="button1_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button1" class="btn btn-dark" onserverclick="button1_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
-                    </div> 
-                <div class="card pl-5 mt-3">
+                </div> 
+
+                <div class="card pl-5 mt-3" runat="server" id="card2">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -170,7 +181,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency2" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People2" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People2" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description2" class="card-text">Description</span></p>
@@ -180,12 +191,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button2" class="btn btn-primary" onserverclick="button2_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button2" class="btn btn-dark" onserverclick="button2_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                     </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card3">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -199,7 +210,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency3" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People3" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People3" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description3" class="card-text">Description</span></p>
@@ -209,12 +220,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button3" class="btn btn-primary" onserverclick="button3_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button3"  class="btn btn-dark" onserverclick="button3_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                 </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card4">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -228,7 +239,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency4" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People4" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People4" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description4" class="card-text">Description</span></p>
@@ -238,12 +249,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button4" class="btn btn-primary" onserverclick="button4_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button4" class="btn btn-dark" onserverclick="button4_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                 </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card5">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -257,7 +268,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency5" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People5" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People5" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description5" class="card-text">Description</span></p>
@@ -267,12 +278,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button5" class="btn btn-primary" onserverclick="button5_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button5" class="btn btn-dark" onserverclick="button5_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                 </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card6">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -286,7 +297,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency6" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People6" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People6" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description6" class="card-text">Description</span></p>
@@ -296,12 +307,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button6" class="btn btn-primary" onserverclick="button6_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button6" class="btn btn-dark" onserverclick="button6_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                 </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card7">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -315,7 +326,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency7" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People7" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People7" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description7" class="card-text">Description</span></p>
@@ -325,12 +336,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button7" class="btn btn-primary" onserverclick="button7_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button7" class="btn btn-dark" onserverclick="button7_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                 </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card8">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -344,7 +355,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency8" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People8" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People8" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description8" class="card-text">Description</span></p>
@@ -354,12 +365,12 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button8" class="btn btn-primary" onserverclick="button8_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button8" class="btn btn-dark" onserverclick="button8_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div>
                    </div>
-                <div class="card pl-5 mt-3">
+                <div class="card pl-5 mt-3" runat="server" id="card9">
                   <div class="card-body">
                        <h4 class="card-title"><b>Sport name</b></h4>
                         <div class="row">
@@ -373,7 +384,7 @@
                                 <p>Proficiency: <span runat="server" id="Proficiency9" class="card-text">Proficiency</span></p>
                             </div>
                             <div class="col-md-6 col-6">
-                                <p>People: <span runat="server" id="People9" class="card-text">People committed</span></p>
+                                <p><span runat="server" id="People9" class="card-text">People committed</span></p>
                             </div>
                             <div class="col-md-6 col-6">
                                 <p>Description: <span runat="server" id="Description9" class="card-text">Description</span></p>
@@ -383,16 +394,19 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button9" class="btn btn-primary" onserverclick="button9_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button9" class="btn btn-dark" onserverclick="button9_ServerClick">I'm interested!</button>
                             </div>
                         </div>              
                     </div> 
                 </div>
-              </div>
-           </div>
+
+            </div>
+
+
         </div>
+    </div>
     
-    
+    </form>
 
 </body>
 </html>

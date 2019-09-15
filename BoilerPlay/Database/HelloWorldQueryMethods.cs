@@ -18,6 +18,37 @@ namespace BoilerPlay.Database
             }
             return involvmentIDs.ToArray();
         }
+        public static void InsertInvolvement(Involvement involvement)
+        {
+            int IsHost = 0;
+            if (involvement.IsHost)
+                IsHost = 1;
+
+            string sqlStatement = String.Format("INSERT INTO HelloWorld.Involvements(Posts_PostID, Accounts_ID, IsHost) VALUES('{0}', '{1}', '{2}');", involvement.Posts_PostID, involvement.AccountsID, IsHost);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
+        public static Involvement[] GetAllInvolvements(string AccountID)
+        {
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Involvements WHERE Accounts_ID = '{0}';", AccountID));
+
+            List<Involvement> posts = new List<Involvement>();
+            for (int x = 0; x < output.Rows.Count; x++)
+            {
+                Involvement newInvolvement = new Involvement();
+                newInvolvement.Posts_PostID = output.Rows[x].ItemArray[0].ToString();
+                newInvolvement.AccountsID = output.Rows[x].ItemArray[1].ToString();
+
+                int isHost = Convert.ToInt32(output.Rows[x].ItemArray[2].ToString());
+                if (isHost > 0)
+                    newInvolvement.IsHost = true;
+                else
+                    newInvolvement.IsHost = false;
+
+                posts.Add(newInvolvement);
+            }
+            return posts.ToArray();
+        }
         public static Posts[] GetAllPostsByLocation(string location)
         {
             var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Posts WHERE Location = '{0}';", location));
@@ -133,6 +164,12 @@ namespace BoilerPlay.Database
                 Phone = output.Rows[0].ItemArray[6].ToString()
             };
             return account;
+        }
+        public struct Involvement
+        {
+            public string Posts_PostID;
+            public string AccountsID;
+            public bool IsHost;
         }
 
         public struct Account
