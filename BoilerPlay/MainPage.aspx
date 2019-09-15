@@ -23,19 +23,150 @@
              </div>
             <div class="col-md-4 col-12 text-right">
                 <a href="#"><img src="avatar_circle.png" width="20%" /></a>
+                    <p><a href="#">NAME</a></p>
             </div>
         </div>
     </div>
     <div class="card">
         <img class="card-img-top" src="random.jpeg" alt="Card image cap">
         <div class="card-body">
-           <h5 class="card-title"><Card title</h5>
-           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-           <a href="#" class="btn btn-primary">Go somewhere</a>
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint0" class="card-text">Date and Time</p>
+           <p runat="server" id="Location0" class="card-text">Location</p>
+           <p runat="server" id="Proficiency0" class="card-text">Proficiency</p>
+           <p runat="server" id="People0" class="card-text">People committed</p>
+           <p runat="server" id="Description0" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
         </div>  
     </div>
-    
-   
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint1" class="card-text">Date and Time</p>
+           <p runat="server" id="Location1" class="card-text">Location</p>
+           <p runat="server" id="Proficiency1" class="card-text">Proficiency</p>
+           <p runat="server" id="People1" class="card-text">People committed</p>
+           <p runat="server" id="Description1" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint2" class="card-text">Date and Time</p>
+           <p runat="server" id="Location2" class="card-text">Location</p>
+           <p runat="server" id="Proficiency2" class="card-text">Proficiency</p>
+           <p runat="server" id="People2" class="card-text">People committed</p>
+           <p runat="server" id="Description2" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint3" class="card-text">Date and Time</p>
+           <p runat="server" id="Location3" class="card-text">Location</p>
+           <p runat="server" id="Proficiency3" class="card-text">Proficiency</p>
+           <p runat="server" id="People3" class="card-text">People committed</p>
+           <p runat="server" id="Description3" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint4" class="card-text">Date and Time</p>
+           <p runat="server" id="Location4" class="card-text">Location</p>
+           <p runat="server" id="Proficiency4" class="card-text">Proficiency</p>
+           <p runat="server" id="People4" class="card-text">People committed</p>
+           <p runat="server" id="Description4" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint5" class="card-text">Date and Time</p>
+           <p runat="server" id="Location5" class="card-text">Location</p>
+           <p runat="server" id="Proficiency5" class="card-text">Proficiency</p>
+           <p runat="server" id="People5" class="card-text">People committed</p>
+           <p runat="server" id="Description5" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint6" class="card-text">Date and Time</p>
+           <p runat="server" id="Location6" class="card-text">Location</p>
+           <p runat="server" id="Proficiency6" class="card-text">Proficiency</p>
+           <p runat="server" id="People6" class="card-text">People committed</p>
+           <p runat="server" id="Description6" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint7" class="card-text">Date and Time</p>
+           <p runat="server" id="Location7" class="card-text">Location</p>
+           <p runat="server" id="Proficiency7" class="card-text">Proficiency</p>
+           <p runat="server" id="People7" class="card-text">People committed</p>
+           <p runat="server" id="Description7" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint8" class="card-text">Date and Time</p>
+           <p runat="server" id="Location8" class="card-text">Location</p>
+           <p runat="server" id="Proficiency8" class="card-text">Proficiency</p>
+           <p runat="server" id="People8" class="card-text">People committed</p>
+           <p runat="server" id="Description8" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
+     <div class="card">
+        <img class="card-img-top" src="random.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h4 class="card-title"><b>Sport name</b></h4>
+           <p runat="server" id="DatePrint9" class="card-text">Date and Time</p>
+           <p runat="server" id="Location9" class="card-text">Location</p>
+           <p runat="server" id="Proficiency9" class="card-text">Proficiency</p>
+           <p runat="server" id="People9" class="card-text">People committed</p>
+           <p runat="server" id="Description9" class="card-text">Description</p>
+
+
+            <a href="#" class="btn btn-primary">I'm interested!</a>
+        </div>  
+    </div>
         
     </div>
     <form id="form1" runat="server">

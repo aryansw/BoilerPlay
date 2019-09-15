@@ -24,6 +24,13 @@ namespace BoilerPlay
             //Add the cookie
             Response.Cookies.Add(cookie);
         }
+        public static void DeleteCookie(HttpRequest Request, HttpResponse Response)
+        {
+            if (Request.Cookies[CookieName] != null)
+            {
+                Response.Cookies[CookieName].Expires = DateTime.Now.AddDays(-1);
+            }
+        }
         public static string ReadCookie(HttpRequest Request, HttpResponse Response)
         {
             //Grab the cookie
@@ -32,7 +39,6 @@ namespace BoilerPlay
             //Check to make sure the cookie exists
             if (null == cookie)
             {
-                Response.Write("Cookie not found. <br><hr>");
                 return string.Empty;
             }
             else
