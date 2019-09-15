@@ -30,7 +30,7 @@
                                 <h2>Your Profile</h2>
                             </div>
                             <div class="col-4 col-md-4 text-right pr-4">
-                                <button class="btn btn-dark" id="Edit">Edit</button>
+                                <button class="btn btn-dark" id="Edit" runat="server" onserverclick="Edit_ServerClick">Edit</button>
                             </div>
                         </div>
                         <div class="form-group m-3">
@@ -53,18 +53,18 @@
                                     <input type="text" class="form-control bg-light" runat="server" id="Profile_Year" name="year" placeholder="Profile_Year" value="" required>
                                 </div>
                                 <div class="col-6 col-md-6">
-                                    <p class="text-left mt-3">Password:</p>
-                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password" placeholder="Profile_Password" required>
+                                    <p class="text-left mt-3" id="label1" runat="server">Enter Password:</p>
+                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password" placeholder="Profile_Password">
                                 </div>
                                 <div class="col-6 col-md-6">
-                                    <p class="text-left mt-3">Re-enter Password:</p>
-                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password1" placeholder="Profile_Password" required>
+                                    <p class="text-left mt-3" id="label2" runat="server">Re-enter Password:</p>
+                                    <input type="password" class="form-control bg-light" runat="server" id="Profile_Password1" placeholder="Profile_Password">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-12 text-right pr-4">
-                                <button class="btn btn-dark" id="SubmitChanges">Submit</button>
+                                <button class="btn btn-dark" id="SubmitChanges" runat="server" onserverclick="SubmitChanges_ServerClick">Submit</button>
                             </div>
                         </div>
                      </form>

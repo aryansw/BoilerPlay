@@ -195,6 +195,21 @@ namespace BoilerPlay.Database
             };
             return newpost;
         }
+        public static string YearfromInt(int x)
+        {
+            switch (x)
+            {
+                case 1:
+                    return "Freshman";
+                case 2:
+                    return "Sophomore";
+                case 3:
+                    return "Junior";
+                case 4:
+                default:
+                    return "Senior";
+            }
+        }
         public struct Involvement
         {
             public string Posts_PostID;

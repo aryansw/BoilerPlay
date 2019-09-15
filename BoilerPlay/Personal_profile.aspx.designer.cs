@@ -22,6 +22,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlForm Personal_profile_Form;
         
         /// <summary>
+        /// Edit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton Edit;
+        
+        /// <summary>
         /// ProfileName control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Profile_Year;
         
         /// <summary>
+        /// label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl label1;
+        
+        /// <summary>
         /// Profile_Password control.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Profile_Password;
         
         /// <summary>
+        /// label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl label2;
+        
+        /// <summary>
         /// Profile_Password1 control.
         /// </summary>
         /// <remarks>
@@ -83,5 +110,14 @@ namespace BoilerPlay {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Profile_Password1;
+        
+        /// <summary>
+        /// SubmitChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton SubmitChanges;
     }
 }

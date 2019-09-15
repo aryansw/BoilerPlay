@@ -253,12 +253,13 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Create_Event.aspx.cs">
-      <DependentUpon>Create_Event.aspx</DependentUpon>
+    <Compile Include="MainPageGlobals.cs" />
+    <Compile Include="Personal_profile.aspx.cs">
+      <DependentUpon>Personal_profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create_Event.aspx.designer.cs">
-      <DependentUpon>Create_Event.aspx</DependentUpon>
+    <Compile Include="Personal_profile.aspx.designer.cs">
+      <DependentUpon>Personal_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
