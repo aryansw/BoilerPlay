@@ -68,8 +68,7 @@ namespace BoilerPlay
             int count = MainPageGlobals.Posts.Length;
             if (count > 10)
                 count = 10;
-            // ;
-            String xyz = MainPageGlobals.Posts[0].Posts_Name;
+
             switch (count-1) {
                 case 9:
                     host_name9 = "DisplayProfile.aspx?name=" + MainPageGlobals.Posts[9].Posts_Name;
@@ -446,7 +445,7 @@ namespace BoilerPlay
             for (int i = tempValues.Rows.Count - 1; i >= 0 ; i--)
             {
                 string subString = DateTime.Parse(tempValues.Rows[i].ItemArray[3].ToString()).ToString("yyyy-MM-dd hh:mm");
-                if (!String.IsNullOrWhiteSpace(dateBox))
+                if (String.IsNullOrWhiteSpace(dateBox) == false && dateBox != "0001-01-01")
                 {
                     //2019-09-16
                     if (subString.Substring(0, 10).Equals(dateBox))
