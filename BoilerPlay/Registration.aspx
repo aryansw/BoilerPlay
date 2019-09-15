@@ -38,6 +38,11 @@
                         <div class="form-group m-3">
                             <input type="password" class="form-control bg-light" runat="server" id="Password1" placeholder="Re-enter Password">
                         </div>
+                        <div style ="width:100%" class="text-center pb-n2">
+                            <div class ="alert alert-danger text-center px-5 mx-5 pb-n2" runat="server" role="alert" id="Error_Flag" >
+                                <p class="pb-n2">Passwords do not match</p>
+                            </div>
+                        </div>
                         <div class="form-group m-3">
                             <input type="text" id="description" name="description" runat="server" class="form-control bg-light" placeholder="Description (Fun Facts/Interests)">
                         </div>
