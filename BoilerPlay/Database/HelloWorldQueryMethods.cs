@@ -69,8 +69,38 @@ namespace BoilerPlay.Database
             }
             return highestPostNumber + 1;
         }
+        public static int GenerateNewProfileID()
+        {
+            var ProfileID = Query.ExecuteReturnCommand("SELECT HelloWorld.Accounts.ID FROM HelloWorld.Accounts ORDER by ID asc");
+            return Convert.ToInt32(ProfileID.Rows[ProfileID.Rows.Count-1].ItemArray[0].ToString()) + 1;
+        }
+        public static Account GetAccountFromCookie(HttpRequest Request, HttpResponse Response)
+        {
+            string cookieValue = Cookies.ReadCookie(Request, Response);
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Accounts WHERE ID = '{0}'", cookieValue));
+            Account account = new Account
+            {
+                ID = output.Rows[0].ItemArray[0].ToString(),
+                Name = output.Rows[0].ItemArray[1].ToString(),
+                Year = Convert.ToInt32(output.Rows[0].ItemArray[2].ToString()),
+                Desc = output.Rows[0].ItemArray[3].ToString(),
+                Password= output.Rows[0].ItemArray[4].ToString(),
+                Email = output.Rows[0].ItemArray[5].ToString(),
+                Phone = output.Rows[0].ItemArray[6].ToString()
+            };
+            return account;
+        }
 
-
+        public struct Account
+        {
+            public string ID;
+            public string Name;
+            public int Year;
+            public string Desc;
+            public string Password;
+            public string Email;
+            public string Phone;
+        }
         public struct Posts
         {
             public string PostID;

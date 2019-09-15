@@ -22,10 +22,10 @@ namespace BoilerPlay.Database
             public static readonly string Beginner = "Beginner";
             public static readonly string Amateur = "Amateur";
             public static readonly string Skilled = "Skilled";
-            public static readonly string Professional = "Professional";
+            public static readonly string Expert = "Expert";
             public static string[] SportsCombinations =
             {
-                Beginner,Amateur,Skilled,Professional
+                Beginner,Amateur,Skilled,Expert
             };
         }
         public static class Posts_Sports
