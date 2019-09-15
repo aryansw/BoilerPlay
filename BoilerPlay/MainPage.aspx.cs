@@ -17,8 +17,13 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(String.IsNullOrWhiteSpace(Cookies.ReadCookie(this.Request, this.Response)))
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
             // This is a Cookie DO NOT DELETE MONAL+
             successMessage.Visible = false;
+            allEventsBtn.Enabled = false;
 
             //Cookies.ReadCookie(this.Request,this.Response);
 
@@ -81,10 +86,12 @@ namespace BoilerPlay
             {
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
 
-                string peopleText = String.Empty;
+                string peopleText;
+                int totalNumberOfPeopleNeeded = MainPageGlobals.Posts[x].NumberNeeded;
+                int currentNumber = HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID);
                 if (index == x)
                 {
-                    peopleText = String.Format("People Commited: {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded + 1, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
+                    peopleText = String.Format("People Commited: {0}/{1}", currentNumber + 1, totalNumberOfPeopleNeeded);
                     HelloWorldQueryMethods.Involvement involvement = new HelloWorldQueryMethods.Involvement
                     {
                         AccountsID = AccountID,
@@ -93,10 +100,10 @@ namespace BoilerPlay
                     };
                     HelloWorldQueryMethods.InsertInvolvement(involvement);
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Already Joined";
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
                 }
                 else
-                    peopleText = String.Format("People Commited: {0}/{1}", MainPageGlobals.Posts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[x].PostID));
+                    peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
 
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
@@ -108,7 +115,12 @@ namespace BoilerPlay
                 if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
                 {
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Already Joined";
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
+                }
+                else if(currentNumber >= totalNumberOfPeopleNeeded)
+                {
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Event Full";
                 }
             }
         }
@@ -119,16 +131,15 @@ namespace BoilerPlay
         }
         protected void button0_ServerClick(object sender, EventArgs e)
         {
-            button0.Disabled = true;
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 0].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(0);
             SetSuccessMessage();
         }
         protected void button1_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 1].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(1);
             SetSuccessMessage();
         }
@@ -136,7 +147,7 @@ namespace BoilerPlay
         protected void button2_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 2].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(2);
             SetSuccessMessage();
         }
@@ -144,7 +155,7 @@ namespace BoilerPlay
         protected void button3_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 3].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(3);
             SetSuccessMessage();
         }
@@ -152,7 +163,7 @@ namespace BoilerPlay
         protected void button4_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 4].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(4);
             SetSuccessMessage();
         }
@@ -160,7 +171,7 @@ namespace BoilerPlay
         protected void button5_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 5].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(5);
             SetSuccessMessage();
         }
@@ -168,7 +179,7 @@ namespace BoilerPlay
         protected void button6_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 6].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(6);
             SetSuccessMessage();
         }
@@ -176,7 +187,7 @@ namespace BoilerPlay
         protected void button7_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 7].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(7);
             SetSuccessMessage();
         }
@@ -184,7 +195,7 @@ namespace BoilerPlay
         protected void button8_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 8].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(8);
             SetSuccessMessage();
         }
@@ -192,9 +203,49 @@ namespace BoilerPlay
         protected void button9_ServerClick(object sender, EventArgs e)
         {
             string PostID = MainPageGlobals.Posts[(MainPageGlobals.CurrentPage * 10) + 9].PostID;
-            HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
+            //HelloWorldQueryMethods.IncrementNumberOfAttendees(PostID);
             SetCards(9);
             SetSuccessMessage();
+        }
+
+        protected void createEventBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void myEventBtn_Click(object sender, EventArgs e)
+        {
+            allEventsBtn.Enabled = true;
+            myEventBtn.Enabled = false;
+
+            string accountID = Cookies.ReadCookie(this.Request, this.Response);
+            var involvements = HelloWorldQueryMethods.GetAllInvolvements(accountID);
+            if (involvements.Length > 0)
+            {
+                string cmdBase = String.Format("WHERE PostID = '{0}'", involvements[0].Posts_PostID);
+                for (int x = 1; x < involvements.Length; x++)
+                {
+                    string postID = involvements[x].Posts_PostID;
+                    cmdBase += String.Format(" || PostID = '{0}'", postID);
+                }
+                cmdBase += ";";
+
+                var output = HelloWorldQueryMethods.GetAllPosts(cmdBase);
+
+                MainPageGlobals.Posts = output;
+                SetCards(-2);
+            }
+        }
+        protected void profileBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void allEventsBtn_Click(object sender, EventArgs e)
+        {
+            allEventsBtn.Enabled = false;
+            myEventBtn.Enabled = true;
+
+            SetCards();
         }
     }
 }

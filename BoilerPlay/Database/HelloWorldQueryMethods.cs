@@ -103,9 +103,34 @@ namespace BoilerPlay.Database
             }
             return posts.ToArray();
         }
+        public static Posts[] GetAllPosts(string WhereClause)
+        {
+            var output = Query.ExecuteReturnCommand("SELECT * FROM HelloWorld.Posts " + WhereClause);
+
+            List<Posts> posts = new List<Posts>();
+            for (int x = 0; x < output.Rows.Count; x++)
+            {
+                Posts newPost = new Posts();
+                newPost.PostID = output.Rows[x].ItemArray[0].ToString();
+                newPost.Title = output.Rows[x].ItemArray[1].ToString();
+                newPost.Posts_Name = output.Rows[x].ItemArray[2].ToString();
+                newPost.DateTime = DateTime.Parse(output.Rows[x].ItemArray[3].ToString());
+                newPost.Gender = output.Rows[x].ItemArray[4].ToString();
+                newPost.Desc = output.Rows[x].ItemArray[5].ToString();
+                newPost.Location = output.Rows[x].ItemArray[6].ToString();
+                newPost.NumberNeeded = Convert.ToInt32(output.Rows[x].ItemArray[7].ToString());
+                newPost.Proficiency = output.Rows[x].ItemArray[8].ToString();
+                posts.Add(newPost);
+            }
+            return posts.ToArray();
+        }
+        public static void DeleteAccount(string accountID)
+        {
+            Query.ExecuteNonReturnCommand(String.Format("DELETE FROM HelloWorld.Accounts WHERE ID = {0};", accountID));
+        }
         public static int GetNumberOfPeopleInEvent(string PostID)
         {
-            var output = Query.ExecuteReturnCommand("SELECT * FROM HelloWorld.Involvements");
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Involvements WHERE Posts_PostID = {0}", PostID));
             return output.Rows.Count;
         }
         public static void DeletePostRow(string postID)

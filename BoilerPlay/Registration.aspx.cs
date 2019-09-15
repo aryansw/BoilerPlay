@@ -37,14 +37,23 @@ namespace BoilerPlay
                 {
                     Year = "None";
                 }
-                
-                Database.Register.RegisterAccount(Name.Value.ToString(), description.Value.ToString(), Password.Value.ToString(), email.Value.ToString(), phone.Value.ToString(), Year);
-                Cookies.WriteCookie(Database.HelloWorldQueryMethods.GenerateNewProfileID().ToString(),this.Response);
-                Response.Redirect("MainPage.aspx");
+                try
+                {
+                    Database.Register.RegisterAccount(Name.Value.ToString(), description.Value.ToString(), Password.Value.ToString(), email.Value.ToString(), phone.Value.ToString(), Year);
+
+                    Cookies.WriteCookie(Database.HelloWorldQueryMethods.GenerateNewProfileID().ToString(), this.Response);
+                    Response.Redirect("MainPage.aspx");
+                }
+                catch
+                {
+                    Error_Flag.Visible = true;
+                    Error_Flag.InnerText = "This email is already in use.";
+                }
             }
             else
             {
                 Error_Flag.Visible = true;
+                Error_Flag.InnerText = "Passwords do not match.";
             }
         }
     }

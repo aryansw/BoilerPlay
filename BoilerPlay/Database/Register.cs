@@ -59,6 +59,10 @@ namespace BoilerPlay.Database
                     Email,
                     PhoneNo));
             }
+            else
+            {
+                throw new Exception("Email is already in use");
+            }
         }
     }
 }

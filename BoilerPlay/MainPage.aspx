@@ -22,9 +22,10 @@
                 <h1 class="text-center">BoilerPlay</h1>
                 <p class="text-center">Find teammates anytime, anywhere!</p>
                 <div class="row text-center">
-                    <div class="col-4 col-md-4"><a href="#" class="btn btn-light mb-5" style="font-size: 11.9px"><b>Create Event</b></a></div>                
-                    <div class="col-4 col-md-4"><a href="#" class="btn btn-light mb-5" style="font-size: 11.9px"><b>My events</b></a></div>
-                    <div class="col-4 col-md-4"><a href="#" class="btn btn-light mb-5" style="font-size: 11.9px"><b>My Profile</b></a></div>
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="createEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="createEventBtn_Click" Text="Create Event" /></div>                 
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="allEventsBtn" style="font-size: 11.9px; font-weight: bold" OnClick="allEventsBtn_Click" Text="All Events" /></div>               
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="myEventBtn" style="font-size: 11.9px; font-weight: bold" OnClick="myEventBtn_Click" Text="My Events" /></div>
+                    <div class="col-3 col-md-3"><asp:Button runat="server" CssClass="btn btn-light mb-5" ID="profileBtn" style="font-size: 11.9px; font-weight: bold" OnClick="profileBtn_Click" Text="Profile" /></div>
                 </div>
              </div>
             <div class="col-md-4 col-12 text-right">
@@ -71,6 +72,7 @@
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
                                         <p>Start Time:<input type="time" min="00:00" max="23:59" id="TimeStartFilter" /></p>
+                                        <asp:TextBox runat="server" ID="textBx" TextMode="Time"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">
