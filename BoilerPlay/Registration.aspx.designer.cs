@@ -112,6 +112,15 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password1;
         
         /// <summary>
+        /// Error_Flag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Error_Flag;
+        
+        /// <summary>
         /// description control.
         /// </summary>
         /// <remarks>

@@ -12,7 +12,7 @@ namespace BoilerPlay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Error_Flag.Visible = false;
         }
         
         protected void Login_Click(object sender, EventArgs e)
@@ -27,11 +27,11 @@ namespace BoilerPlay
                     Cookies.WriteCookie(output.Rows[0].ItemArray[0].ToString(), this.Response);
                     Response.Redirect("MainPage.aspx");
                 }
-              /*  else
+               else
                 {
-                        /TO DO, WRONG PASSWORD CODE
+                    Error_Flag.Visible = true;
                 }
-              */
+             
             }
             // TO DO : STORE COOKIE WITH ACCOUNT ID
         }
