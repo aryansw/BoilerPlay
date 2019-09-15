@@ -68,14 +68,14 @@
                                     <p>Date:</p>
                                     <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group mt-md-3">
-                                        <p>Start Time:<input type="time" min="00:00" max="23:59" id="TimeStartFilter" /></p>
+                                <div class="col-12" runat="server">
+                                    <div class="form-group mt-md-3" runat="server">
+                                        <p>Start Time:<input type="time" min="00:00" max="23:59" runat="server" id="TimeStartFilter" /></p>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
-                                        <p>End Time: <input type="time" min="00:00" max="23:59" id="TimeEndFilter" /></p>
+                                        <p>End Time: <input type="time" min="00:00" max="23:59" runat="server" id="TimeEndFilter" /></p>
                                     </div>
                                 </div>
                                 <div class="col-12">

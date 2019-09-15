@@ -35,9 +35,11 @@ namespace BoilerPlay
             posts.Location = locationBox;
             posts.NumberNeeded = reqPeopleBox;
             posts.Proficiency = profeciencyBox;
+            posts.DateTime = Convert.ToDateTime(dateTimeBox);
 
 
-         
+
+
             Database.HelloWorldQueryMethods.CreatePostInDataBase(posts);
         }
     }
