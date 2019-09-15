@@ -10,7 +10,7 @@
 namespace BoilerPlay {
     
     
-    public partial class Personal_profile {
+    public partial class Create_Event {
         
         /// <summary>
         /// login_form control.
