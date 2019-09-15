@@ -33,7 +33,7 @@
                         </div>
                         <p class="text-center">Don't have an account?</p>
                         <div class="form-group text-center">
-                            <a href="#" class="btn btn-dark">SIGN UP</a>
+                             <button class="btn btn-dark" id="Sign_Up" runat="server" onServerClick="Sign_Up_ServerClick">SIGN UP</button>
                         </div>
 
                      </form>

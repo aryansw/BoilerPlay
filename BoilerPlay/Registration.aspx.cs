@@ -12,6 +12,12 @@ namespace BoilerPlay
         protected void Page_Load(object sender, EventArgs e)
         {
             Error_Flag.Visible = false;
+            /*     Cookies.DeleteCookie(this.Request,this.Response);
+                 Cookies.DeleteCookie(this.Request, this.Response);
+                 Cookies.DeleteCookie(this.Request, this.Response);
+                 Cookies.WriteCookie("10001",this.Response);
+                 Database.EmailFunction.sendEmail(Database.HelloWorldQueryMethods.GetAccountFromCookie(this.Request,this.Response),Database.HelloWorldQueryMethods.GetPostsFromPostID("1268"));
+             */
         }
         protected void Register_ServerClick(object sender, EventArgs e)
         {
@@ -37,6 +43,7 @@ namespace BoilerPlay
                 {
                     Year = "None";
                 }
+                
                 Database.Register.RegisterAccount(Name.Value.ToString(), description.Value.ToString(), Password.Value.ToString(), email.Value.ToString(), phone.Value.ToString(), Year);
                 Cookies.WriteCookie(Database.HelloWorldQueryMethods.GenerateNewProfileID().ToString(),this.Response);
                 Response.Redirect("MainPage.aspx");

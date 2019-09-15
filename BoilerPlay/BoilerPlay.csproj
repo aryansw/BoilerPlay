@@ -27,13 +27,6 @@
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.5</TypeScriptToolsVersion>
   </PropertyGroup>
-  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
-    <ItemGroup>
-      <RoslynFiles Include="$(CscToolPath)\*" />
-    </ItemGroup>
-    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
-    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
-  </Target>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -70,16 +63,8 @@
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -238,6 +223,14 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cookies.cs" />
+    <Compile Include="Create_Event.aspx.cs">
+      <DependentUpon>Create_Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Event.aspx.designer.cs">
+      <DependentUpon>Create_Event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EmailFunction.cs" />
     <Compile Include="Database\DatabaseOptions.cs" />
     <Compile Include="Database\HelloWorldQueryMethods.cs" />
     <Compile Include="Database\LoginCheck.cs" />
@@ -266,13 +259,6 @@
     </Compile>
     <Compile Include="Create_Event.aspx.designer.cs">
       <DependentUpon>Create_Event.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Personal_profile.aspx.cs">
-      <DependentUpon>Personal_profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Personal_profile.aspx.designer.cs">
-      <DependentUpon>Personal_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
