@@ -55,6 +55,12 @@ namespace BoilerPlay.Database
 
             Query.ExecuteNonReturnCommand(sqlStatement);
         }
+        public static void DeleteInvolvement(string PostID, string AccountID)
+        {
+            string sqlStatement = String.Format("DELETE FROM HelloWorld.`Involvements` WHERE Posts_PostID = '{0}' && Accounts_ID = '{1}';", PostID, AccountID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
         public static void DeleteUserFromInvolvement(string AccountID)
         {
             string sqlStatement = String.Format("DELETE FROM HelloWorld.`Involvements` WHERE Accounts_ID = '{0}';", AccountID);

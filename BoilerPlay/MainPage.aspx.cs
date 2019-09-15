@@ -124,11 +124,13 @@ namespace BoilerPlay
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[x].Gender;
                 ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[x].Title;
 
+                ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = false;
                 //UpdateMainPageGlobals
                 if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
                 {
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
                     ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
+                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
                 }
                 else if(currentNumber >= totalNumberOfPeopleNeeded)
                 {
@@ -247,6 +249,11 @@ namespace BoilerPlay
                 MainPageGlobals.Posts = output;
                 SetCards(-2);
             }
+            else
+            {
+                MainPageGlobals.Posts = new HelloWorldQueryMethods.Posts[0];
+                SetCards(-2);
+            }
         }
         protected void profileBtn_Click(object sender, EventArgs e)
         {
@@ -265,6 +272,64 @@ namespace BoilerPlay
         {
             Cookies.DeleteCookie(this.Request, this.Response);
             Response.Redirect("LoginPage.aspx");
+        }
+
+        protected void button10_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(0);
+        }
+
+        protected void button11_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(1);
+        }
+
+        protected void button12_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(2);
+        }
+
+        protected void button13_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(3);
+        }
+
+        protected void button14_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(4);
+        }
+
+        protected void button15_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(5);
+        }
+
+        protected void button16_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(6);
+        }
+
+        protected void button17_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(7);
+        }
+
+        protected void button18_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(8);
+        }
+
+        protected void button19_ServerClick(object sender, EventArgs e)
+        {
+            UnSubscribeFromEvent(9);
+        }
+        private void UnSubscribeFromEvent(int cardNo)
+        {
+            string postID = MainPageGlobals.Posts[cardNo].PostID;
+            string accountID = Cookies.ReadCookie(this.Request, this.Response);
+
+            HelloWorldQueryMethods.DeleteInvolvement(postID, accountID);
+            SetCards(-1);
         }
     }
 }

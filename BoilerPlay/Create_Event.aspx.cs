@@ -99,7 +99,7 @@ namespace BoilerPlay
 
         protected void profileBtn_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Personal_profile.aspx");
         }
     }
 }

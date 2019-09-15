@@ -67,7 +67,6 @@
                                 <div class="col-12">
                                     <div class="form-group mt-md-3">
                                         <p>Start Time:<asp:TextBox runat="server" TextMode="Time" ID="TimeStartFilter" /></p>
-                                        <asp:TextBox runat="server" ID="textBx" TextMode="Time"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -130,7 +129,9 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button0" class="btn btn-dark" onserverclick="button0_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button0" class="btn btn-dark" onserverclick="button0_ServerClick">Join Event</button>
+                                <button runat="server" id="button10" class="btn btn-danger" onserverclick="button10_ServerClick">Not Interested Anymore</button>
+                                
                             </div>
                         </div>              
                     </div>
@@ -159,7 +160,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button1" class="btn btn-dark" onserverclick="button1_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button1" class="btn btn-dark" onserverclick="button1_ServerClick">Join Event</button>
+                                <button runat="server" id="button11" class="btn btn-danger" onserverclick="button11_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -189,7 +191,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button2" class="btn btn-dark" onserverclick="button2_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button2" class="btn btn-dark" onserverclick="button2_ServerClick">Join Event</button>
+                                <button runat="server" id="button12" class="btn btn-danger" onserverclick="button12_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -218,7 +221,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button3"  class="btn btn-dark" onserverclick="button3_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button3"  class="btn btn-dark" onserverclick="button3_ServerClick">Join Event</button>
+                                <button runat="server" id="button13" class="btn btn-danger" onserverclick="button13_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -247,7 +251,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button4" class="btn btn-dark" onserverclick="button4_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button4" class="btn btn-dark" onserverclick="button4_ServerClick">Join Event</button>
+                                <button runat="server" id="button14" class="btn btn-danger" onserverclick="button14_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -276,7 +281,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button5" class="btn btn-dark" onserverclick="button5_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button5" class="btn btn-dark" onserverclick="button5_ServerClick">Join Event</button>
+                                <button runat="server" id="button15" class="btn btn-danger" onserverclick="button15_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -305,7 +311,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button6" class="btn btn-dark" onserverclick="button6_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button6" class="btn btn-dark" onserverclick="button6_ServerClick">Join Event</button>
+                                <button runat="server" id="button16" class="btn btn-danger" onserverclick="button16_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -334,7 +341,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button7" class="btn btn-dark" onserverclick="button7_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button7" class="btn btn-dark" onserverclick="button7_ServerClick">Join Event</button>
+                                <button runat="server" id="button17" class="btn btn-danger" onserverclick="button17_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
@@ -363,7 +371,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button8" class="btn btn-dark" onserverclick="button8_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button8" class="btn btn-dark" onserverclick="button8_ServerClick">Join Event</button>
+                                <button runat="server" id="button18" class="btn btn-danger" onserverclick="button18_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div>
@@ -392,7 +401,8 @@
                             </div>
                             <div class="col-md-6 col-6"></div>
                             <div class="col-md-6 col-6">
-                                <button runat="server" id="button9" class="btn btn-dark" onserverclick="button9_ServerClick">I'm interested!</button>
+                                <button runat="server" id="button9" class="btn btn-dark" onserverclick="button9_ServerClick">Join Event</button>
+                                <button runat="server" id="button19" class="btn btn-danger" onserverclick="button19_ServerClick">Not Interested Anymore</button>
                             </div>
                         </div>              
                     </div> 
