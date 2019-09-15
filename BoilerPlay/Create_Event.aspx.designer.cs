@@ -10,7 +10,7 @@
 namespace BoilerPlay {
     
     
-    public partial class LoginPage {
+    public partial class Create_Event {
         
         /// <summary>
         /// login_form control.
@@ -22,39 +22,66 @@ namespace BoilerPlay {
         protected global::System.Web.UI.HtmlControls.HtmlForm login_form;
         
         /// <summary>
-        /// email control.
+        /// SportName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SportName;
         
         /// <summary>
-        /// Password control.
+        /// proficiency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect proficiency;
         
         /// <summary>
-        /// Error_Flag control.
+        /// Gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Error_Flag;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Gender;
         
         /// <summary>
-        /// Login control.
+        /// ReqPeople control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Login;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ReqPeople;
+        
+        /// <summary>
+        /// Location control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Location;
+        
+        /// <summary>
+        /// SportDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText SportDescription;
+        
+        /// <summary>
+        /// Calendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar;
     }
 }

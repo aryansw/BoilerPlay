@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using BoilerPlay.Database;
 
 namespace BoilerPlay
 {
@@ -19,8 +20,30 @@ namespace BoilerPlay
 
             Cookies.ReadCookie(this.Request,this.Response);
 
-            /* The Following code segment is to initalize
+            HelloWorldQueryMethods.Posts[] allPosts = HelloWorldQueryMethods.GetAllPosts();
 
+            int count = allPosts.Length;
+            if (count > 10)
+                count = 10;
+            
+            for(int x = 0; x < 10; x++)
+            {
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+            }
+            for (int x = 0; x < count; x++)
+            {
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
+
+                string peopleText = String.Format("People Commited {0}/{1}", allPosts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(allPosts[x].PostID));
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = allPosts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = allPosts[x].Location;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = allPosts[x].Proficiency;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = allPosts[x].Desc;
+            }
+
+            /* The Following code segment is to initalize
+            
             var allValues = BoilerPlay.Database.Query.ExecuteReturnCommand("Select * FROM POSTS");
 
             String sportsBox = sportsComboBox.Text;
@@ -30,14 +53,7 @@ namespace BoilerPlay
             String timeBox1 = timeComboBox1.Text; //accept as hh:mm (smaller)
             String timeBox2 = timeComboBox2.Text; //accept as hh:mm (bigger value)
 
-            int timeBox2totalTime = ((Int32.Parse(timeBox2.Substring(0, 2))) * 60) + ((Int32.Parse(timeBox2.Substring(3, 5))));
-            int timeBox1totalTime = ((Int32.Parse(timeBox1.Substring(0, 2))) * 60) + ((Int32.Parse(timeBox1.Substring(3, 5))));
-            int timeDifference = timeBox2totalTime - timeBox1totalTime;
-
-            int hh = (timeDifference / 60);
-            int mm = (timeDifference % 60);
-
-            String timebox = hh.ToString() + ":" + mm.ToString();
+           
 
             DataTable dateFromDatabase = BoilerPlay.Database.Query.ExecuteReturnCommand("SELECT HelloWorld.Posts.DateTime FROM HelloWorld.Posts");
             string[] dates = new string[dateFromDatabase.Rows.Count];
@@ -51,19 +67,13 @@ namespace BoilerPlay
 
             for (int i = 0; i < (dates.Length); i++)
             {
-                if (dates[i].Substring(0, 10).Equals(dateBox) && (dates[i].Substring(11, 15).Equals(timeBox)))
+                if (dates[i].Substring(0, 10).Equals(dateBox) && (Int32.Parse(timeBox2.Substring(0, 2))>= (Int32.Parse((dates[i].Substring(11, 13))))) && (Int32.Parse(timeBox1.Substring(0, 2)) <= (Int32.Parse((dates[i].Substring(11, 13))))) && (Int32.Parse(timeBox2.Substring(3, 5)) >= (Int32.Parse((dates[i].Substring(13, 15))))) && (Int32.Parse(timeBox1.Substring(3, 5)) <= (Int32.Parse((dates[i].Substring(13, 15))))))
                 {
                     tempValues.Rows.RemoveAt(i);
                     i = i - 1;
                 }
             }
             */
-
-
-
-            //for (int i = 0; i <)
-
-            //x.Rows[0].ItemArray[0];
         }
 
     }
