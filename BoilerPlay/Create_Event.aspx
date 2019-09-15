@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Personal_profile.aspx.cs" Inherits="BoilerPlay.Personal_profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Create_Event.aspx.cs" Inherits="BoilerPlay.Create_Event" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Profile</title>
+    <title>Event</title>
 </head>
 <body>
 

@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using BoilerPlay.Database;
 
 namespace BoilerPlay
 {
@@ -18,6 +19,28 @@ namespace BoilerPlay
             // This is a Cookie DO NOT DELETE MONAL
 
             Cookies.ReadCookie(this.Request,this.Response);
+
+            HelloWorldQueryMethods.Posts[] allPosts = HelloWorldQueryMethods.GetAllPosts();
+
+            int count = allPosts.Length;
+            if (count > 10)
+                count = 10;
+            
+            for(int x = 0; x < 10; x++)
+            {
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = false;
+            }
+            for (int x = 0; x < count; x++)
+            {
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
+
+                string peopleText = String.Format("People Commited {0}/{1}", allPosts[x].NumberNeeded, HelloWorldQueryMethods.GetNumberOfPeopleInEvent(allPosts[x].PostID));
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = allPosts[x].DateTime.ToString("dd/MM/yyyy hh:mm:ss");
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = allPosts[x].Location;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = allPosts[x].Proficiency;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
+                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = allPosts[x].Desc;
+            }
 
             /* The Following code segment is to initalize
             

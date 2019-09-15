@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BoilerPlay
 {
-    public partial class Personal_profile : System.Web.UI.Page
+    public partial class Create_Event : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

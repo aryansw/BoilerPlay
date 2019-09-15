@@ -144,7 +144,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="Personal_profile.aspx" />
+    <Content Include="Create_Event.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -251,12 +251,12 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Personal_profile.aspx.cs">
-      <DependentUpon>Personal_profile.aspx</DependentUpon>
+    <Compile Include="Create_Event.aspx.cs">
+      <DependentUpon>Create_Event.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Personal_profile.aspx.designer.cs">
-      <DependentUpon>Personal_profile.aspx</DependentUpon>
+    <Compile Include="Create_Event.aspx.designer.cs">
+      <DependentUpon>Create_Event.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
