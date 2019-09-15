@@ -34,5 +34,10 @@ namespace BoilerPlay
             HelloWorldQueryMethods.CreatePostInDataBase(post);
             */
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

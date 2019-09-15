@@ -18,6 +18,49 @@ namespace BoilerPlay.Database
             }
             return involvmentIDs.ToArray();
         }
+        public static void InsertInvolvement(Involvement involvement)
+        {
+            int IsHost = 0;
+            if (involvement.IsHost)
+                IsHost = 1;
+
+            string sqlStatement = String.Format("INSERT INTO HelloWorld.Involvements(Posts_PostID, Accounts_ID, IsHost) VALUES('{0}', '{1}', '{2}');", involvement.Posts_PostID, involvement.AccountsID, IsHost);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
+        public static Involvement[] GetAllInvolvements(string AccountID)
+        {
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Involvements WHERE Accounts_ID = '{0}';", AccountID));
+
+            List<Involvement> posts = new List<Involvement>();
+            for (int x = 0; x < output.Rows.Count; x++)
+            {
+                Involvement newInvolvement = new Involvement();
+                newInvolvement.Posts_PostID = output.Rows[x].ItemArray[0].ToString();
+                newInvolvement.AccountsID = output.Rows[x].ItemArray[1].ToString();
+
+                int isHost = Convert.ToInt32(output.Rows[x].ItemArray[2].ToString());
+                if (isHost > 0)
+                    newInvolvement.IsHost = true;
+                else
+                    newInvolvement.IsHost = false;
+
+                posts.Add(newInvolvement);
+            }
+            return posts.ToArray();
+        }
+        public static void DeleteInvolvement(string PostID)
+        {
+            string sqlStatement = String.Format("DELETE FROM HelloWorld.`Involvements` WHERE Posts_PostID = '{0}';", PostID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
+        public static void DeleteUserFromInvolvement(string AccountID)
+        {
+            string sqlStatement = String.Format("DELETE FROM HelloWorld.`Involvements` WHERE Accounts_ID = '{0}';", AccountID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
+        }
         public static Posts[] GetAllPostsByLocation(string location)
         {
             var output = Query.ExecuteReturnCommand(String.Format("SELECT * FROM HelloWorld.Posts WHERE Location = '{0}';", location));
@@ -68,6 +111,20 @@ namespace BoilerPlay.Database
         public static void DeletePostRow(string postID)
         {
             Query.ExecuteNonReturnCommand(String.Format("DELETE FROM HelloWorld.Posts WHERE PostID = {0};", postID));
+        }
+        public static void IncrementNumberOfAttendees(string PostID)
+        {
+            var output = Query.ExecuteReturnCommand(String.Format("SELECT HelloWorld.Posts.NumberNeeded FROM HelloWorld.Posts WHERE HelloWorld.Posts.PostID = '{0}';", PostID));
+            int currentNumberNeeded = Convert.ToInt32(output.Rows[0].ItemArray[0].ToString());
+            currentNumberNeeded++;
+
+            string sqlStatement = String.Format("UPDATE HelloWorld.Posts " +
+                "SET " +
+                "HelloWorld.Posts.NumberNeeded = '{0}' " +
+                "WHERE " +
+                "HelloWorld.Posts.PostID = '{1}';", currentNumberNeeded, PostID);
+
+            Query.ExecuteNonReturnCommand(sqlStatement);
         }
         public static void CreatePostInDataBase(Posts postToAdd)
         {
@@ -138,6 +195,13 @@ namespace BoilerPlay.Database
             };
             return newpost;
         }
+        public struct Involvement
+        {
+            public string Posts_PostID;
+            public string AccountsID;
+            public bool IsHost;
+        }
+
         public struct Account
         {
             public string ID;
