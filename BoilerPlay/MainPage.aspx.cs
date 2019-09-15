@@ -157,52 +157,55 @@ namespace BoilerPlay
             for (int x = 0; x < count; x++)
             {
                 int postCounter = (MainPageGlobals.CurrentPage * 10) + x;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
-
-                string peopleText;
-                int totalNumberOfPeopleNeeded = MainPageGlobals.Posts[postCounter].NumberNeeded;
-                int currentNumber = HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[postCounter].PostID);
-                if (index == x)
+                if (postCounter < MainPageGlobals.Posts.Length)
                 {
-                    peopleText = String.Format("People Commited: {0}/{1}", currentNumber + 1, totalNumberOfPeopleNeeded);
-                    HelloWorldQueryMethods.Involvement involvement = new HelloWorldQueryMethods.Involvement
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("card" + x)).Visible = true;
+
+                    string peopleText;
+                    int totalNumberOfPeopleNeeded = MainPageGlobals.Posts[postCounter].NumberNeeded;
+                    int currentNumber = HelloWorldQueryMethods.GetNumberOfPeopleInEvent(MainPageGlobals.Posts[postCounter].PostID);
+                    if (index == x)
                     {
-                        AccountsID = AccountID,
-                        IsHost = false,
-                        Posts_PostID = MainPageGlobals.Posts[postCounter].PostID
-                    };
-                    HelloWorldQueryMethods.InsertInvolvement(involvement);
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
-                }
-                else
-                    peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
+                        peopleText = String.Format("People Commited: {0}/{1}", currentNumber + 1, totalNumberOfPeopleNeeded);
+                        HelloWorldQueryMethods.Involvement involvement = new HelloWorldQueryMethods.Involvement
+                        {
+                            AccountsID = AccountID,
+                            IsHost = false,
+                            Posts_PostID = MainPageGlobals.Posts[postCounter].PostID
+                        };
+                        HelloWorldQueryMethods.InsertInvolvement(involvement);
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
+                    }
+                    else
+                        peopleText = String.Format("People Commited: {0}/{1}", currentNumber, totalNumberOfPeopleNeeded);
 
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("MM/dd/yyyy hh:mm tt");
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[postCounter].Desc;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[postCounter].Gender;
-                ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[postCounter].Title;
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("DatePrint" + x)).InnerText = MainPageGlobals.Posts[x].DateTime.ToString("MM/dd/yyyy hh:mm tt");
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Location" + x)).InnerText = MainPageGlobals.Posts[x].Location;
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Proficiency" + x)).InnerText = MainPageGlobals.Posts[x].Proficiency;
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("People" + x)).InnerText = peopleText;
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Description" + x)).InnerText = MainPageGlobals.Posts[postCounter].Desc;
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("Gender" + x)).InnerText = "Gender: " + MainPageGlobals.Posts[postCounter].Gender;
+                    ((System.Web.UI.HtmlControls.HtmlGenericControl)this.FindControl("CardTitle" + x)).InnerText = MainPageGlobals.Posts[postCounter].Title;
 
-                //UpdateMainPageGlobals
-                if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
-                {
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
-                }
-                else if (currentNumber >= totalNumberOfPeopleNeeded)
-                {
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Event Full";
-                }
-                else if (index != x)
-                {
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = false;
-                    ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Join Event";
+                    //UpdateMainPageGlobals
+                    if (involvementsForAccount.Contains(MainPageGlobals.Posts[x].PostID))
+                    {
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Currently Joined";
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button1" + x)).Visible = true;
+                    }
+                    else if (currentNumber >= totalNumberOfPeopleNeeded)
+                    {
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = true;
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Event Full";
+                    }
+                    else if (index != x)
+                    {
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).Disabled = false;
+                        ((System.Web.UI.HtmlControls.HtmlButton)this.FindControl("button" + x)).InnerText = "Join Event";
+                    }
                 }
             }
         }
@@ -530,6 +533,7 @@ namespace BoilerPlay
             }
             MainPageGlobals.Posts = posts;
 
+            MainPageGlobals.CurrentPage = 0;
             SetCards(-2);
         }
 
@@ -541,51 +545,61 @@ namespace BoilerPlay
         protected void PageButton0_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 0;
+            SetCards(-1);
         }
 
         protected void PageButton1_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 1;
+            SetCards(-1);
         }
 
         protected void PageButton2_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 2;
+            SetCards(-1);
         }
 
         protected void PageButton3_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 3;
+            SetCards(-1);
         }
 
         protected void PageButton4_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 4;
+            SetCards(-1);
         }
 
         protected void PageButton5_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 5;
+            SetCards(-1);
         }
 
         protected void PageButton6_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 6;
+            SetCards(-1);
         }
 
         protected void PageButton7_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 7;
+            SetCards(-1);
         }
 
         protected void PageButton8_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 8;
+            SetCards(-1);
         }
 
         protected void PageButton9_ServerClick(object sender, EventArgs e)
         {
             MainPageGlobals.CurrentPage = 9;
+            SetCards(-1);
         }
     }
 }

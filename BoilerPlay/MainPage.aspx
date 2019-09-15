@@ -89,7 +89,7 @@
                                         <select runat="server" id="ProficiencyFilter">
                                             <option></option>
                                             <option>Beginner</option>
-                                            <option>Amatuer</option>
+                                            <option>Amateur</option>
                                             <option>Skilled</option>
                                             <option>Expert</option>
                                         </select>
@@ -108,8 +108,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label>Apply Filters</label>
-                                        <asp:Button runat="server" ID="filterBtn" OnClick="filterBtn_Click"/>
+                                        <asp:Button runat="server" ID="filterBtn" Text="Apply Filters" OnClick="filterBtn_Click"/>
                                     </div>
                                 </div>
                                 
